@@ -16,7 +16,8 @@
     "url": "https://github.com/HelixInCode/Zona-Resto/issues"
   },
   "homepage": "https://github.com/HelixInCode/Zona-Resto#readme",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "postcss-cli": "^7.1.1"
   }
 }
