@@ -1,0 +1,19 @@
+{
+  "name": "zona-resto",
+  "version": "1.0.0",
+  "description": "e-commerce",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HelixInCode/Zona-Resto.git"
+  },
+  "author": "helixincode",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HelixInCode/Zona-Resto/issues"
+  },
+  "homepage": "https://github.com/HelixInCode/Zona-Resto#readme"
+}
