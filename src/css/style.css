@@ -1,3 +1,379 @@
-body{
-  background: green;
+:root{
+  --PrimarioNaranja: #d93611;
+  --PrimarioVino: #410c3a;
+  --SecundarioAmarillo: #ffe577;
+  --SecundarioNaranja: #f28241;
+  --SecundarioNaranjaClaro: #fec051;
+  --UbuntuEnlaces: 'Ubuntu', sans-serif; /*italica*/
+  --UbuntuSubtitulos: 'Ubuntu', sans-serif; /*medium*/
+  --UbuntuTitulosPrincipales: 'Ubuntu', sans-serif; /*Bold*/
+  --RobotoParrafos: 'Roboto', sans-serif;/*regular*/
+  /* --SecundarioOscuro: #0075BE; */
+  --sombra: rgba(0, 0, 0, 0.5);
+  --sombraClara: rgba(0, 0, 0, 0.25);
+  --radioButtonSpace: 30px;
+ 
+  --titulos: {
+    font-family: var(--UbuntuTitulosPrincipales);
+    font-weight: bold;
+    color: var(--PrimarioClaro);
+    text-align: center;
+  }
+
+  --addressPrice: {
+    padding: 5px 10px;
+    position: absolute;
+    border-radius: 3px;
+    transition: .3s;
+  }
+
+  --imgCover:{
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  --input-text:{
+    width: 100%;
+    padding: 5px;
+    height: 35px;
+    border: none;
+    /* border-radius: 5px; */
+  }
+
+  --button:{
+    padding: 0 30px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: bold;
+    font-style: italic;
+    background-color: var(--PrimarioNaranja);
+    outline: none;
+    text-align: center;
+  }
+
+  --overlay:{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--sombra);
+    transition: .3s;
+  }
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: none;
+  outline: none;
+}
+p, ul{
+  margin: 0;
+}
+header{
+  position: relative;
+  z-index: 9999;
+  /* background-color: #fff; */
+}
+nav{
+  position: absolute;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  right: 0;
+  /* display: flex; */
+  /* justify-content: space-between; */
+  color: #fff;
+  /* background-color: var(--PrimarioNaranja); */
+} 
+nav > .img-container{
+  /* width: 100px; */
+  width: calc(50px + 50px);
+}
+nav > .menu-btns{
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+nav > .menu-btns.user-hide{
+  grid-template-columns: 1fr;
+}
+nav > .menu-btns > .menu-overlay{
+  @apply --overlay;
+}
+nav > .menu-btns > .menu-overlay.hide{
+  transform: translateX(-100%);
+}
+@custom-selector :--main-menu nav > .menu-btns > .menu-items;
+:--main-menu{
+  z-index: 9999;
+  position: fixed;
+  right: 10px;
+  bottom: 100px;
+  border-radius: 10px;
+  background-color: var(--PrimarioNaranja);
+  display: grid;
+  grid-template-columns: auto;
+  gap: 10px;
+  transition: .3s;
+}
+:--main-menu > ul{
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  gap: 10px;
+}
+:--main-menu > ul > li{
+  display: flex;
+}
+:--main-menu > ul > li > a{
+  padding: 5px 10px;
+  font-weight: bold;
+  font-size: 1.3em;
+  color: #fff;
+  font-family: var(--UbuntuEnlaces);
+}
+:--main-menu > ul:nth-of-type(1) > li > a:hover{
+  background-color: var(--SecundarioNaranja);
+}
+:--main-menu > ul:nth-of-type(2) > li{
+  justify-self: end;
+}
+:--main-menu > ul:nth-of-type(2) > li > a{
+  color: var(--SecundarioNaranja);
+  /* background-color: var(--SecundarioAmarillo); */
+  border-radius: 8px;
+}
+:--main-menu > ul:nth-of-type(2) > li:hover > a{
+  color: var(--SecundarioAmarillo) ;
+  background-color: var(--PrimarioNaranja);
+}
+:--main-menu.hide{
+  right: -120%;
+}
+nav > .menu-btns > .hamburger-btn{
+  z-index: 9999;
+  position: fixed;
+  right: 10px;
+  bottom: 30px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border: 1px solid var(--PrimarioNaranja);
+  border-radius: 50%;
+  color: var(--PrimarioNaranja);
+  background-color: var(--SecundarioAmarillo);
+  justify-content: center;
+  align-items: center;
+  transition: .3s;
+  outline: none;
+}
+/*---------------------Panel-Usuario------------------------------*/
+@custom-selector :--user-menu nav > .menu-btns > .user;
+:--user-menu{
+  /* position: relative; */
+  /* display: grid; */
+  display: none;
+  grid-template-columns: auto;
+  gap: 10px;
+}
+:--user-menu > .user-icon{
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 10px;
+  align-items: center;
+  cursor: pointer;
+}
+:--user-menu > .user-icon > .fa-angle-down{
+  transform: rotateZ(-90deg);
+  transition: .3s;
+}
+:--user-menu > .user-icon > .fa-angle-down.rotate{
+  transform: rotateZ(0deg);
+}
+:--user-menu > ul{
+  position: absolute;
+  top: 70px;
+  right: 0px;
+  width: 250px;
+  transform: translateX(0);
+  transition: .3s;
+}
+:--user-menu > ul.hide{
+  transform: translateX(100%);
+}
+:--user-menu > ul > li{
+  padding: 10px;
+  background-color: var(--PrimarioNaranja);
+  box-shadow: 2px 2px 2px var(--sombra);
+}
+:--user-menu > ul > li:nth-of-type(1){
+  color: var(--PrimarioNaranja);
+  font-family: var(--UbuntuEnlaces);
+  background-color: var(--SecundarioAmarillo);
+}
+:--user-menu > ul > li:nth-of-type(n + 2):hover{
+  background-color: var(--PrimarioClaro);
+  cursor: pointer;
+}
+:--user-menu > ul > li > a{
+  color: var(--SecundarioAmarillo);
+  font-family: var(--UbuntuEnlaces);
+}
+
+@custom-selector :--carouselItem .index-carousel > .carousel-inner > .carousel-item;
+@custom-selector :--carouselcover .index-carousel > .carousel-inner > .main-cover;
+.index-carousel{
+  position: relative;
+}
+.index-carousel > a{
+  z-index: 10;
+}
+:--carouselItem,
+:--carouselcover{
+  height: 540px;
+  position: relative;
+  z-index: 6;
+}
+:--carouselItem > img{
+  @apply --imgCover;
+}
+:--carouselcover{
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: end;
+}
+:--carouselcover > img{
+  height: 100%;
+}
+:--carouselItem > .overlay-img{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: color(#410c3a alpha(40%));
+}
+
+#search-main{
+  z-index: 20;
+  position: absolute;
+  top: calc(50% - (514.88px / 2));
+  /* right: 10px; */
+  /* bottom: 10px; */
+  display: grid;
+  grid-template-columns: minmax(240px, 1000px);
+  /* justify-content: center; */
+  /* align-content: center */
+}
+#search-main [type = "text"]{
+  @apply --input-text;
+  padding: 0;
+  height: 100%;
+}
+@custom-selector :--searchContainer #search-main > .form-container;
+:--searchContainer{
+  padding: 20px;
+  border-radius: 10px;
+  /* background-color: rgba(255, 255, 255, .5); */
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 15px;
+}
+:--searchContainer > img{
+  width: 280px;
+  justify-self: center;
+}
+:--searchContainer > .input-container{
+  padding: 10px 15px;
+  border: 1px solid var(--sombra);
+  background-color: #fff;
+  display: grid; 
+  grid-template-columns: auto 1fr;
+  gap: 5px;
+}
+:--searchContainer > .input-container > i{
+  font-size: 19px;
+  color: var(--PrimarioVino);
+}
+:--searchContainer > p{
+  color: #fff;
+  font-size: 1em;
+}
+:--searchContainer > button,
+:--searchContainer a{
+  padding: 0 30px;
+  border: none;
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: bold;
+  background-color: var(--PrimarioNaranja);
+  outline: none;
+  text-align: center;
+}
+#botones-container > .active{
+  background-color: color(#d93611 blackness(80%)) !important;
+}
+
+:--searchContainer > button:hover{
+  background-color: color(#d93611 lightness(40%));
+}
+
+@custom-media --limited-height screen and (height >= 555px);
+
+@media (--limited-height){
+  :--carouselItem,
+  :--carouselcover{
+    height: 100vh;
+  }
+}
+@media screen and (min-width: 768px){
+  :--main-menu{
+    position: unset;
+    border-radius: unset;
+    background-color: unset;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto;
+    gap: 30px;
+  }
+  :--main-menu > ul{
+    grid-template-rows: auto;
+  }
+  :--main-menu > ul:nth-of-type(1){
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    column-gap: 30px;
+  }
+  :--main-menu > ul:nth-of-type(2) li > a{
+    border-radius: unset;
+  }
+
+  #search-main{
+    top: calc(50% - 58px);
+  }
+  :--searchContainer{
+    grid-template-columns: repeat(3, 1fr);
+  }
+  :--searchContainer > img{
+    grid-column: 3 span;
+  }
+  :--searchContainer > p{
+    font-size: 2em;
+    grid-column: 1 / 4;
+  }
+  :--searchContainer > button{
+    grid-column: 2 / 3;
+  }
+}
+@media screen and (min-width: 1010px){
+  #search-main{
+    left: 10px;
+  }
 }

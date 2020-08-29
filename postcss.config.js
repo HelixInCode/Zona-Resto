@@ -1,14 +1,14 @@
 module.exports = {
   plugins: [
     require('postcss-cssnext')({
-      autoprefixer:{
-        features: {
+      features: {
+        autoprefixer: {
+          flexbox: false,
           grid: false,
-          grid: false
-        }
-      },
-      customProperties: false,
+        },
+        customProperties: false,
+        calc: false,
+      }
     })
   ]
-
 }
