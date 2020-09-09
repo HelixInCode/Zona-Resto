@@ -85,6 +85,11 @@
     height: auto;
     display: grid;
     grid-template-columns: minmax(100px, 300px) auto minmax(100px, 300px);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
 }
 .nav-principal > .enlaces-nav{
     display: grid;
@@ -107,7 +112,9 @@
 }
 .nav-principal > form > .form-container > .input-container > input{
     border: 1px solid var(--PrimarioVino);
-    padding: 10px 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 50px;
     border-radius: 3px;
     width: 100%;
 }
@@ -126,6 +133,90 @@
 .nav-principal > form > .form-container >  button > i{
     color: white;
     font-size: 18px;
+}
+#results{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+}
+#results > .general-container{
+    display: grid;
+    grid-template-columns: minmax(300px, 1300px);
+    justify-self: center;
+    margin-top: 150px;
+} 
+#results > .general-container > h1{
+    padding-top: 20px;
+    padding-bottom: 30px;
+    text-align: center;
+    text-decoration-line: underline;
+    color: var(--PrimarioVino);
+    font-weight: 600;
+}
+#results > .general-container > .specific-container{
+    display: grid;
+    grid-template-columns: minmax(300px, 1000px) 300px; 
+    justify-content: center;   
+    justify-self: center;
+    
+}
+#results > .general-container > .specific-container > .results-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+}
+#results > .general-container > .specific-container > .results-container > .item-container{
+    display: grid;
+    grid-template-columns: minmax(100px, 300px) auto minmax(200px, 300px);
+    justify-content: center;
+    
+}
+#results > .general-container > .specific-container > .results-container > .item-container > .imagen > .foto{
+    width: 320px;
+    clip-path: circle(33.7% at 48% 49%);
+    position: absolute;
+    z-index: 2;
+    margin-top: 30px;
+}
+#results > .general-container > .specific-container > .results-container > .item-container > .imagen > .marco{
+    position: relative;
+    padding: 20px;
+    width: 250px;
+    margin-left: 30px;
+}
+/* border-bottom: 3px solid var(--PrimarioVino); */
+#results > .general-container > .specific-container > .results-container > .item-container > .description-container{
+    background-color: #d93611;
+    width: 300px;
+    max-width: 500px;
+    padding-top: 30px;
+}
+#results > .general-container > .specific-container > .results-container > .item-container > .description-container > .titulo{
+    padding: 5px;
+}
+#results > .general-container > .specific-container > .results-container > .item-container > .description-container > .titulo > h2{
+    font-weight: 700;
+    text-decoration-line: underline;
+}
+#results > .general-container > .specific-container > .results-container > .item-container > .description-container > .description{
+    font-weight: 600;
+    font-size: 20px;
+}
+#results > .general-container > .specific-container > .results-container > .item-container > .info{
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: 1fr;
+    justify-content: center;
+    text-align: center;
+    align-content: inherit;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+#results > .general-container > .specific-container > .results-container > .item-container > .info > .delivery{
+    align-self: flex-end;
+}
+#results > .general-container > .results-container > .categorias-container{
+    
 }
 
 
