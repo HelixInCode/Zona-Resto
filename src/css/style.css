@@ -275,7 +275,9 @@ nav > .menu-btns > .hamburger-btn{
 }
 :--carouselcover > img{
   height: 100%;
-  margin-left: auto;
+    margin-left: auto;
+    right: 0;
+    position: absolute;
 }
 :--carouselItem > .overlay-img{
   position: absolute;
@@ -296,13 +298,17 @@ nav > .menu-btns > .hamburger-btn{
   grid-template-columns: minmax(240px, 1000px);
   /* justify-content: center; */
   /* align-content: center */
+  transition: .3s;
 
   @media screen and (min-width: 768px){
-    top: calc(50% - 58px);
+    top: calc(50% - 8px);
   }
 
   @media screen and (min-width: 1010px){
     left: 10px;
+  }
+  @media screen and (min-width: 1200px){
+    top: calc(50% - 58px);
   }
 }
 #search-main [type = "text"]{
@@ -378,12 +384,16 @@ nav > .menu-btns > .hamburger-btn{
 @custom-selector :--footer-list-anchor ul > li > a;
 .main-footer{
   background-color: var(--PrimarioNaranja);
+  
+  @media screen and (min-width: 1060px){
+    border-top: 5px solid var(--SecundarioAmarillo);
+  }
 }
 :--inner-footer{
   display: grid;
-  row-gap: 50px;
   grid-template-columns: minmax(250px, 1fr);
-  grid-template-rows: repeat(3, auto) 174px;
+  grid-template-rows: repeat(5, auto) 174px;
+  row-gap: 25px;
   color: #fff;
   
   @media screen and (min-width: 576px){
@@ -392,14 +402,19 @@ nav > .menu-btns > .hamburger-btn{
     column-gap: 15px;
     row-gap: unset;
   }
-  @media screen and (min-width: 740px){
-    grid-template-columns: minmax(250px, 1fr) minmax(180px, 1fr) minmax(270px, 320px);
+  @media screen and (min-width: 768px){
+    grid-template-columns: minmax(250px, 1fr) minmax(180px, 1fr) minmax(270px, 1fr);
     grid-template-rows: auto 174px;
   }
   @media screen and (min-width: 1060px){
-    grid-template-columns: minmax(250px, 1fr) minmax(180px, 1fr) minmax(270px, 320px) 1fr;
+    grid-template-columns: minmax(250px, 1fr) minmax(180px, 1fr) minmax(270px, 1fr) minmax(270px, 1fr);
     grid-template-rows: 174px;
   }
+}
+:--inner-footer hr{
+  border-bottom: 2px solid #fff;
+  width: 100px;
+  justify-self: center;
 }
 :--inner-footer > .footer-links > ul{
   display: grid;
@@ -407,7 +422,7 @@ nav > .menu-btns > .hamburger-btn{
   gap: 10px;
   justify-items: center;
   
-  @media screen and (min-width: 576px){
+  @media screen and (min-width: 768px){
     justify-items: unset;
   }
 }
@@ -439,28 +454,43 @@ nav > .menu-btns > .hamburger-btn{
   @media screen and (min-width: 576px){
     grid-column: 2 span;
   } 
-  @media screen and (min-width: 740px){
+  @media screen and (min-width: 768px){
     grid-column: unset;
   }
 }
 :--inner-footer > .footer-img{
   background-color: var(--PrimarioVino);
   display: grid;
-  grid-template-columns: auto 1fr;
-
+  grid-template-columns: 1fr;
+  
   @media screen and (min-width: 576px){
     grid-column: 2 span;
   }
-  @media screen and (min-width: 740px){
+  @media screen and (min-width: 768px){
     grid-column: 3 span;
   }
   @media screen and (min-width: 1060px){
+    grid-template-columns: auto 1fr;
     grid-column: unset;
   }
 }
-:--inner-footer > .footer-img > img{
+
+:--inner-footer > .footer-img > img:nth-of-type(1){
+  display: none;
+  height: 100%;
+
+  @media screen and (min-width: 1060px){
+    display: block;
+  }
+}
+:--inner-footer > .footer-img > img:nth-of-type(2){
   height: 100%;
   justify-self: center;
+  
+  @media screen and (min-width: 1060px){
+    /* height: unset; */
+    /* width: 100%; */
+  }
 }
 :--inner-footer > .footer-links > :--footer-list-anchor,
 :--inner-footer > .footer-social-links > :--footer-list-anchor{

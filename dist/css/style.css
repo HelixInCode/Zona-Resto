@@ -251,7 +251,9 @@ nav > .menu-btns > .user > ul > li > a{
 }
 .index-carousel > .carousel-inner > .main-cover > img{
   height: 100%;
-  margin-left: auto;
+    margin-left: auto;
+    right: 0;
+    position: absolute;
 }
 .index-carousel > .carousel-inner > .carousel-item > .overlay-img{
   position: absolute;
@@ -272,12 +274,14 @@ nav > .menu-btns > .user > ul > li > a{
   grid-template-columns: minmax(240px, 1000px);
   /* justify-content: center; */
   /* align-content: center */
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 
 @media screen and (min-width: 768px){
 
   #search-main{
-    top: calc(50% - 58px)
+    top: calc(50% - 8px)
   }
 }
 
@@ -285,6 +289,13 @@ nav > .menu-btns > .user > ul > li > a{
 
   #search-main{
     left: 10px
+  }
+}
+
+@media screen and (min-width: 1200px){
+
+  #search-main{
+    top: calc(50% - 58px)
   }
 }
 #search-main [type = "text"]{
@@ -369,11 +380,17 @@ nav > .menu-btns > .user > ul > li > a{
 .main-footer{
   background-color: var(--PrimarioNaranja);
 }
+@media screen and (min-width: 1060px){
+
+  .main-footer{
+    border-top: 5px solid var(--SecundarioAmarillo)
+  }
+}
 .main-footer > .footer-container{
   display: grid;
-  row-gap: 50px;
   grid-template-columns: minmax(250px, 1fr);
-  grid-template-rows: repeat(3, auto) 174px;
+  grid-template-rows: repeat(5, auto) 174px;
+  row-gap: 25px;
   color: #fff;
 }
 @media screen and (min-width: 576px){
@@ -387,19 +404,24 @@ nav > .menu-btns > .user > ul > li > a{
     row-gap: unset
   }
 }
-@media screen and (min-width: 740px){
+@media screen and (min-width: 768px){
 
   .main-footer > .footer-container{
-    grid-template-columns: minmax(250px, 1fr) minmax(180px, 1fr) minmax(270px, 320px);
+    grid-template-columns: minmax(250px, 1fr) minmax(180px, 1fr) minmax(270px, 1fr);
     grid-template-rows: auto 174px
   }
 }
 @media screen and (min-width: 1060px){
 
   .main-footer > .footer-container{
-    grid-template-columns: minmax(250px, 1fr) minmax(180px, 1fr) minmax(270px, 320px) 1fr;
+    grid-template-columns: minmax(250px, 1fr) minmax(180px, 1fr) minmax(270px, 1fr) minmax(270px, 1fr);
     grid-template-rows: 174px
   }
+}
+.main-footer > .footer-container hr{
+  border-bottom: 2px solid #fff;
+  width: 100px;
+  justify-self: center;
 }
 .main-footer > .footer-container > .footer-links > ul{
   display: grid;
@@ -407,7 +429,7 @@ nav > .menu-btns > .user > ul > li > a{
   gap: 10px;
   justify-items: center;
 }
-@media screen and (min-width: 576px){
+@media screen and (min-width: 768px){
 
   .main-footer > .footer-container > .footer-links > ul{
     justify-items: unset
@@ -445,7 +467,7 @@ nav > .menu-btns > .user > ul > li > a{
     grid-column: 2 span
   }
 }
-@media screen and (min-width: 740px){
+@media screen and (min-width: 768px){
 
   .main-footer > .footer-container > .footer-phrase{
     grid-column: unset
@@ -454,7 +476,7 @@ nav > .menu-btns > .user > ul > li > a{
 .main-footer > .footer-container > .footer-img{
   background-color: var(--PrimarioVino);
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 1fr;
 }
 @media screen and (min-width: 576px){
 
@@ -462,7 +484,7 @@ nav > .menu-btns > .user > ul > li > a{
     grid-column: 2 span
   }
 }
-@media screen and (min-width: 740px){
+@media screen and (min-width: 768px){
 
   .main-footer > .footer-container > .footer-img{
     grid-column: 3 span
@@ -471,12 +493,30 @@ nav > .menu-btns > .user > ul > li > a{
 @media screen and (min-width: 1060px){
 
   .main-footer > .footer-container > .footer-img{
+    grid-template-columns: auto 1fr;
     grid-column: unset
   }
 }
-.main-footer > .footer-container > .footer-img > img{
+
+.main-footer > .footer-container > .footer-img > img:nth-of-type(1){
+  display: none;
   height: 100%;
-  justify-self: center;
+}
+
+@media screen and (min-width: 1060px){
+
+  .main-footer > .footer-container > .footer-img > img:nth-of-type(1){
+    display: block
+  }
+}
+.main-footer > .footer-container > .footer-img > img:nth-of-type(2){
+  height: 100%;
+  justify-self: center
+}
+@media screen and (min-width: 1060px){
+
+  .main-footer > .footer-container > .footer-img > img:nth-of-type(2){ /*height: unset;*/ /*width: 100%;*/
+  }
 }
 .main-footer > .footer-container > .footer-links > ul > li > a,
 .main-footer > .footer-container > .footer-social-links > ul > li > a{
