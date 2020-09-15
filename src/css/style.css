@@ -83,7 +83,7 @@ header{
   z-index: 9999;
   /* background-color: #fff; */
 }
-nav{
+.nav-index{
   position: absolute;
   z-index: 9998;
   top: 0;
@@ -94,24 +94,24 @@ nav{
   color: #fff;
   /* background-color: var(--PrimarioNaranja); */
 } 
-nav > .img-container{
+.nav-index > .img-container{
   /* width: 100px; */
   width: calc(50px + 50px);
 }
-nav > .menu-btns{
+.nav-index > .menu-btns{
   display: grid;
   grid-template-columns: 1fr auto;
 }
-nav > .menu-btns.user-hide{
+.nav-index > .menu-btns.user-hide{
   grid-template-columns: 1fr;
 }
-nav > .menu-btns > .menu-overlay{
+.nav-index > .menu-btns > .menu-overlay{
   @apply --overlay;
 }
-nav > .menu-btns > .menu-overlay.hide{
+.nav-index > .menu-btns > .menu-overlay.hide{
   transform: translateX(-100%);
 }
-@custom-selector :--main-menu nav > .menu-btns > .menu-items;
+@custom-selector :--main-menu .nav-index > .menu-btns > .menu-items;
 :--main-menu{
   z-index: 9999;
   position: fixed;
@@ -123,8 +123,10 @@ nav > .menu-btns > .menu-overlay.hide{
   grid-template-columns: auto;
   gap: 10px;
   transition: .3s;
-
+  max-width: 250px;
+  
   @media screen and (min-width: 768px){
+    max-width: unset;
     position: unset;
     border-radius: unset;
     background-color: unset;
@@ -134,9 +136,11 @@ nav > .menu-btns > .menu-overlay.hide{
   }
 }
 :--main-menu > ul{
+  text-align: center;
   display: grid;
   grid-template-columns: 1fr;
   justify-content: center;
+  justify-items: center;
   gap: 10px;
 
   @media screen and (min-width: 768px){
@@ -163,13 +167,9 @@ nav > .menu-btns > .menu-overlay.hide{
 :--main-menu > ul:nth-of-type(1) > li > a:hover{
   background-color: var(--SecundarioNaranja);
 }
-:--main-menu > ul:nth-of-type(2) > li{
-  justify-self: end;
-}
 :--main-menu > ul:nth-of-type(2) > li > a{
   border-radius: 8px;
   color: var(--SecundarioNaranja);
-  /* background-color: var(--SecundarioAmarillo); */
 
   @media screen and (min-width: 768px){
     border-radius: unset;
@@ -182,7 +182,7 @@ nav > .menu-btns > .menu-overlay.hide{
 :--main-menu.hide{
   right: -120%;
 }
-nav > .menu-btns > .hamburger-btn{
+.nav-index > .menu-btns > .hamburger-btn{
   z-index: 9999;
   position: fixed;
   right: 10px;
@@ -200,7 +200,7 @@ nav > .menu-btns > .hamburger-btn{
   outline: none;
 }
 /*---------------------Panel-Usuario------------------------------*/
-@custom-selector :--user-menu nav > .menu-btns > .user;
+@custom-selector :--user-menu .nav-index > .menu-btns > .user;
 :--user-menu{
   /* position: relative; */
   /* display: grid; */
@@ -330,7 +330,8 @@ nav > .menu-btns > .hamburger-btn{
   }
 }
 :--searchContainer > img{
-  width: 280px;
+  width: 100%;
+  max-width: 280px;
   justify-self: center;
 
   @media screen and (min-width: 768px){
@@ -383,10 +384,10 @@ nav > .menu-btns > .hamburger-btn{
 @custom-selector :--inner-footer .main-footer > .footer-container;
 @custom-selector :--footer-list-anchor ul > li > a;
 .main-footer{
+  position: relative;
   background-color: var(--PrimarioNaranja);
-  
   @media screen and (min-width: 1060px){
-    border-top: 5px solid var(--SecundarioAmarillo);
+    /* border-top: 5px solid var(--SecundarioAmarillo); */
   }
 }
 :--inner-footer{
@@ -407,7 +408,7 @@ nav > .menu-btns > .hamburger-btn{
     grid-template-rows: auto 174px;
   }
   @media screen and (min-width: 1060px){
-    grid-template-columns: minmax(250px, 1fr) minmax(180px, 1fr) minmax(270px, 1fr) minmax(270px, 1fr);
+    grid-template-columns:  minmax(270px, 1fr) minmax(250px, 1fr) minmax(180px, 1fr) minmax(270px, 1fr);
     grid-template-rows: 174px;
   }
 }
@@ -421,7 +422,8 @@ nav > .menu-btns > .hamburger-btn{
   grid-template-columns: 1fr;
   gap: 10px;
   justify-items: center;
-  
+  font-weight: 500;
+
   @media screen and (min-width: 768px){
     justify-items: unset;
   }
@@ -445,6 +447,10 @@ nav > .menu-btns > .hamburger-btn{
 }
 :--inner-footer > .footer-social-links > ul > li{
   padding: 0 15px;
+}
+:--inner-footer > .footer-social-links > h6,
+:--inner-footer > .footer-phrase > h5{
+  font-weight: 500;
 }
 :--inner-footer > .footer-phrase{
   display: flex;
@@ -470,26 +476,27 @@ nav > .menu-btns > .hamburger-btn{
     grid-column: 3 span;
   }
   @media screen and (min-width: 1060px){
-    grid-template-columns: auto 1fr;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    grid-template-columns: 1fr auto;
     grid-column: unset;
   }
 }
-
 :--inner-footer > .footer-img > img:nth-of-type(1){
-  display: none;
-  height: 100%;
-
-  @media screen and (min-width: 1060px){
-    display: block;
-  }
-}
-:--inner-footer > .footer-img > img:nth-of-type(2){
   height: 100%;
   justify-self: center;
   
   @media screen and (min-width: 1060px){
     /* height: unset; */
     /* width: 100%; */
+  }
+}
+:--inner-footer > .footer-img > img:nth-of-type(2){
+  display: none;
+  height: 100%;
+
+  @media screen and (min-width: 1060px){
+    display: block;
   }
 }
 :--inner-footer > .footer-links > :--footer-list-anchor,

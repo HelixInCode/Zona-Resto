@@ -1,5 +1,6 @@
 // Main Menu Elements
 const $hamburger = document.getElementById('hamburger')
+const $times = document.getElementById('times')
 const $menuOverlay = document.getElementsByClassName('menu-overlay')[0]
 const $menuItems = document.getElementsByClassName('menu-items')[0]
 // Menu User Panel
@@ -44,3 +45,14 @@ const menuOverlay = new Menu($menuOverlay, $menuItems, $menuOverlay, 'hide', 'hi
 const menu = [menuHamburger, menuOverlay]
 
 menu.forEach(menuType => displayMenu(menuType))
+
+if($times){
+  $hamburger.addEventListener('click', () =>{
+    $hamburger.getElementsByTagName('i')[0].classList.toggle('d-none')
+    $hamburger.getElementsByTagName('i')[1].classList.toggle('d-none')
+  })
+  $menuOverlay.addEventListener('click', () =>{
+    $hamburger.getElementsByTagName('i')[0].classList.toggle('d-none')
+    $hamburger.getElementsByTagName('i')[1].classList.toggle('d-none')
+  })
+}
