@@ -384,6 +384,7 @@ header{
 @custom-selector :--inner-footer .main-footer > .footer-container;
 @custom-selector :--footer-list-anchor ul > li > a;
 .main-footer{
+  z-index: 99999;
   position: relative;
   background-color: var(--PrimarioNaranja);
   @media screen and (min-width: 1060px){

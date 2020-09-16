@@ -379,6 +379,7 @@ header{
   background-color: rgb(189, 47, 15);
 }
 .main-footer{
+  z-index: 99999;
   position: relative;
   background-color: var(--PrimarioNaranja)
 }

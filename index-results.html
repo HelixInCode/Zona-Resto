@@ -67,13 +67,58 @@
 
     </header>
   
-    <main id="main-results" class="px-4">
+    <main id="main-results" class="pr-md-4">
         
+        <aside id="categorias" class="d-none d-md-block">
+
+            <div class="main-container show">
+              <div class="title-container">
+                <h6>Categorías</h6>
+                <i class="fa fa-times d-md-none"></i>
+              </div>
+      
+              <form method="POST" class="categorias-container scrollbar scrollbar-primary">
+      
+                <div class="input-container">
+                    <label for="">Categoria</label>
+                </div>
+                
+                <div class="input-container">
+                    <label for="">Categoria</label>
+                </div>
+                
+                <div class="input-container">
+                    <label for="">Categoria</label>
+                </div>
+                
+                <div class="input-container">
+                    <label for="">Categoria</label>
+                </div>
+                
+                <div class="input-container">
+                    <label for="">Categoria</label>
+                </div>
+                
+      
+              </form>
+            </div>
+      
+            <div class="categorias-overlay hide d-block d-md-none"></div>
+        </aside>
+
         <section id="results" class="py-5 py-md-5">
             
-            <h1>Resto's en la Zona</h1>
+            <h1 class="mt-4 mt-md-0">Resto's en la Zona</h1>
 
-            <div class="specific-container">
+            <div class="category-button waves-effect waves-dark d-md-none">
+
+                <div id="btnFiltrosResponsive">
+                  <span>Categorias</span>
+                </div>
+        
+            </div>
+
+            <div class="specific-container px-3 px-md-0">
                 
                 <div class="item-container">
                     <a class="img-container">
@@ -96,12 +141,45 @@
 
                     <div class="rate-us">
 
-                        <span class="bg-success">3.2</span>
+                        <span class="">3.2</span>
 
                     </div>
 
                     <div class="info">
-                        <div class="">
+                        <div class="delivery">
+                            <p>Con servicio de Delivery</p>
+                        </div>
+                    </div>
+                    
+                </div>  
+
+                <div class="item-container">
+                    <a class="img-container">
+                        <div class="img-frame">
+                            <img src="./dist/img/cover-2.png" alt="">
+                        </div>
+                    </a>
+
+                    <div class="description-container">
+                        <a href="" class="titulo">
+                            <h4 class="font-weight-bold">La Cocina de Alexx</h4>
+                        </a>
+
+                        <div class="description">
+                            <p>Comida Italiana</p>
+                            <p>Calle, Ciudad</p>
+                            <p>Horario de Atención: 09:00am a 20:00pm</p>
+                        </div>
+                    </div>
+
+                    <div class="rate-us">
+
+                        <span class="">3.2</span>
+
+                    </div>
+
+                    <div class="info">
+                        <div class="delivery">
                             <p>Con servicio de Delivery</p>
                         </div>
                     </div>
@@ -129,45 +207,12 @@
 
                     <div class="rate-us">
 
-                        <span class="bg-success">3.2</span>
+                        <span class="">3.2</span>
 
                     </div>
 
                     <div class="info">
-                        <div class="">
-                            <p>Con servicio de Delivery</p>
-                        </div>
-                    </div>
-                    
-                </div>         
-                
-                <div class="item-container">
-                    <a class="img-container">
-                        <div class="img-frame">
-                            <img src="./dist/img/cover-2.png" alt="">
-                        </div>
-                    </a>
-
-                    <div class="description-container">
-                        <a href="" class="titulo">
-                            <h4 class="font-weight-bold">La Cocina de Alexx</h4>
-                        </a>
-
-                        <div class="description">
-                            <p>Comida Italiana</p>
-                            <p>Calle, Ciudad</p>
-                            <p>Horario de Atención: 09:00am a 20:00pm</p>
-                        </div>
-                    </div>
-
-                    <div class="rate-us">
-
-                        <span class="bg-success">3.2</span>
-
-                    </div>
-
-                    <div class="info">
-                        <div class="">
+                        <div class="delivery">
                             <p>Con servicio de Delivery</p>
                         </div>
                     </div>
@@ -178,24 +223,6 @@
             
         </section>
 
-        <aside id="categorias" class="py-md-5">
-            
-            <div class="categorias-container">
-
-                <h4>Categorías</h4>
-
-                <div class="categorias-item">
-                    <a href="">categoria 1</a>
-                    <a href="">categoria 1</a>
-                    <a href="">categoria 1</a>
-                    <a href="">categoria 1</a>
-                    <a href="">categoria 1</a>
-
-                </div>
-            </div>
-
-        </aside>
-  
     </main>
     
     <footer class="main-footer">

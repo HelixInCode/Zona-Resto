@@ -13,27 +13,29 @@
   padding: 0;
 }
 #publicacion{
-  padding-top: 80px;
   display: grid;
   grid-template-columns: 1fr;
   /* grid-template-rows: 200px; */
-  gap: 15px;
   justify-content: center;
   
   @media screen and (min-width: 768px){
-    grid-template-columns: 1fr 200px;
+    padding-top: 80px;
+    grid-template-columns: 1fr;
     grid-template-rows: unset;
+    gap: 30px;
   }
   @media screen and (min-width: 992px){
+    gap: 15px;
     grid-template-columns: 1fr 300px;
   }
 }
 #publicacion > .publicacion-container{
   display: grid;
   grid-template-columns: 1fr;
+  justify-items: center;
   gap: 35px;
   
-  @media screen and (min-width: 576px){
+  @media screen and (min-width: 992px){
     grid-template-columns: 200px 1fr;
     gap: 15px;
   }
@@ -54,6 +56,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 15px;
+  max-width: 400px;
   
   @media screen and (min-width: 576px){
     grid-template-rows: 215px auto;
@@ -68,6 +71,18 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+#publicacion > .publicacion-container > .logo-container > .img-container img{
+  width: 100%;
+  
+  @media screen and (min-width: 576px){
+    width: unset;
+    height: 100%;
+  }
+  @media screen and (min-width: 992px){
+    height: unset;
+    width: 100%;
+  }
 }
 #publicacion > .publicacion-container > .description-container{
   display: grid;
@@ -130,7 +145,7 @@
 #publicacion > .publicacion-container > .rate-us{
   justify-self: center;
   
-  @media screen and (min-width: 576px){
+  @media screen and (min-width: 992px){
     grid-column: 2 / 3;
   }
 }
@@ -141,6 +156,7 @@
   font-weight: bold;
 }
 #publicacion > .img-container{
+  z-index: 999;
   position: fixed;
   height: 100px;
   right: 0;
@@ -149,19 +165,196 @@
   clip-path: polygon(50% 0%, 100% 38%, 100% 100%, 0 100%, 0% 38%);
   
   @media screen and (min-width: 768px){
-    width: 200px;
-    height: calc(100vh - 80px);
+    height: 300px;
+    position: relative;
     left: unset;
-    clip-path: polygon(30% 0, 100% 0%, 100% 100%, 30% 100%, 0% 50%);
-  }
-  @media (min-height: 600px) and (min-width: 768px){
-    height: calc(600px - 80px);
-    top: 80px;
+    clip-path: unset;
   }
   @media screen and (min-width: 992px){
     width: 300px;
+    height: calc(600px - 80px);
+    clip-path: polygon(30% 0, 100% 0%, 100% 100%, 30% 100%, 0% 50%);
   }
 }
 #publicacion > .img-container > img{
   @apply --imgCover;
+  
+  @media screen and (min-width: 768px){
+    padding: 0 30px;
+  }
+  @media screen and (min-width: 992px){
+    padding: 0;
+  }
+}
+
+@custom-selector :--menu-item #menu > .specific-container > .item-container;
+#menu{
+  position: relative;
+  grid-column: 2 / 3;
+  display: grid;
+  grid-template-columns: minmax(200px, 700px);
+  justify-content: center;
+  gap: 50px;
+  
+  @media screen and (min-width: 768px){
+    gap: 15px;
+    grid-template-columns: minmax(500px, 1fr) minmax(150px, 300px)
+  }
+}
+#menu > h1{
+    padding-bottom: 30px;
+    text-align: center;
+    text-decoration-line: underline;
+    color: var(--PrimarioVino);
+    font-weight: 600;
+    font-size: 1.5em;
+} 
+#menu > .category-button{
+    position: absolute;
+    background-color: #ededed;
+    top: 0;
+    left: 0;
+    right: 0;
+    font-weight: bold;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+}
+#menu > .category-button > div{
+padding: 10px 20px;
+}
+#menu > .category-button > hr{
+margin: 0;
+padding: 0;
+width: 1px;
+background-color: var(--sombra);
+}
+#menu > .specific-container{
+  display: grid;
+  gap: 50px;
+  grid-template-columns: minmax(100px, 700px);
+  
+  @media screen and (min-width: 768px){
+    justify-content: end;
+  }
+}
+
+:--menu-item{
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  /* grid-template-columns: 130px minmax(100px, 340px) 1fr; */
+  justify-content: center;
+  row-gap: 15px;
+  padding-bottom: 10px;
+  
+  @media screen and (min-width: 576px){
+    padding-bottom: 0;
+    /* column-gap: 15px; */
+    row-gap: unset;
+    grid-template-columns: 130px minmax(250px, 540px) minmax(10px, 100px)
+  }
+}
+:--menu-item:hover{
+  border-radius: 10px;
+  /* filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7)); */
+  transition-duration: 0.5s;
+}
+:--menu-item > .img-container{
+  display: flex;
+  justify-content: center;
+}
+:--menu-item > .img-container > div{
+  position: relative;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border-bottom-right-radius: 0;
+  background-color: var(--SecundarioNaranjaClaro);
+}
+:--menu-item > .img-container > .img-frame > img{
+  @apply --imgCover;
+  border-radius: 50%;
+  padding: 10px;
+  /* clip-path: circle(33.7% at 48% 49%); */
+}
+:--menu-item > .description-container{
+  /* background-color: #d93611; */
+  padding-left: 15px;
+  width: 100%;
+  text-align: center;
+  border-bottom: 3px solid var(--SecundarioNaranjaClaro); 
+  
+  @media screen and (min-width: 576px){
+    max-height: 130px;
+    text-align: unset;
+  }
+  @media screen and (min-width: 768px){
+    padding: 0 15px;
+  }
+}
+:--menu-item > .description-container > .titulo{
+  font-weight: bold;
+  /* color: var(--PrimarioVino); */
+  color: #404040;
+}
+:--menu-item > .description-container > .titulo h4{
+  margin: 0;
+  padding-bottom: 15px;
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--PrimarioVino);
+}
+:--menu-item > .description-container > .description{
+  font-weight: 500;
+  font-size: 18px;
+  color: #404040;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto;
+  gap: 5px;
+}
+:--menu-item > .description-container > .description > p:nth-child(2){
+  color: green;
+}
+:--menu-item > .cantidad-pedidos{
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 20px);
+  grid-template-rows: 20px;
+
+  @media screen and (min-width: 576px){
+    position: unset;
+  }
+}
+:--menu-item > .cantidad-pedidos > span,
+:--menu-item > .cantidad-pedidos > .fas{
+  width: 20px;
+  height: 20px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+:--menu-item > .cantidad-pedidos > .fas{
+  background-color: var(--PrimarioVino);
+  color: #fff;
+}
+:--menu-item > .cantidad-pedidos > .fas:hover{
+  background-color: color(#410c3a b(30%));
+}
+#menu > .pedidos{
+  grid-row: 1 / 2;
+  height: 300px;
+  color: var(--PrimarioVino);
+  background-color: var(--SecundarioAmarillo);
+  text-align: center;
+  font-weight: bold;
+  clip-path: polygon(13% 90%, 0 100%, 0 0, 100% 0, 100% 100%, 88% 90%, 75% 100%, 63% 90%, 50% 100%, 38% 90%, 25% 100%);
+
+  @media screen and (min-width: 768px){
+    grid-row: unset;
+  }
 }
