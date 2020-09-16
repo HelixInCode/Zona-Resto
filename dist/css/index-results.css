@@ -383,7 +383,6 @@ background-color: var(--sombra);
     position: relative;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: auto 34px auto auto;
     justify-content: center;
     row-gap: 15px;
     padding-bottom: 10px;
@@ -392,7 +391,6 @@ background-color: var(--sombra);
 @media screen and (min-width: 576px){
   
     #results > .specific-container > .item-container{
-        grid-template-rows: unset;
         padding-bottom: 0;
         border-bottom: unset;
         -webkit-column-gap: 15px;

@@ -421,7 +421,6 @@ header{
 :--inner-footer > .footer-links > ul{
   display: grid;
   grid-template-columns: 1fr;
-  grid-auto-rows: 24px;
   gap: 10px;
   justify-items: center;
   font-weight: 500;
