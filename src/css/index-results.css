@@ -392,6 +392,7 @@ background-color: var(--sombra);
     position: relative;
     display: grid;
     grid-template-columns: 1fr;
+    grid-template-rows: auto 34px auto auto;
     justify-content: center;
     row-gap: 15px;
     padding-bottom: 10px;
@@ -399,6 +400,7 @@ background-color: var(--sombra);
     
     
     @media screen and (min-width: 576px){
+        grid-template-rows: unset;
         padding-bottom: 0;
         border-bottom: unset;
         column-gap: 15px;
