@@ -520,12 +520,12 @@ header{
   color: var(--PrimarioVino);
 }
 
-<<<<<<< HEAD
-@custom-media --limited-height screen and (height >= 555px);
+/* <<<<<<< HEAD
+@custom-media --limited-height screen and (height >= 555px); */
 
 /*SECCION QUIENES SOMOS*/
 #nosotros {
-  background-color: #eeeaea;
+  background-color: #dfdddd;
   padding: 30px;
 }
 #nosotros > .contenedor-general{
@@ -540,12 +540,21 @@ header{
   font-size: 30px;
   font-weight: 700;
 }
+#nosotros > .contenedor-general > h4{
+  padding-top: 100px;
+  padding-bottom: 50px;
+  font-weight: 700;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.7));
+}
 #contenedor-especifico{
   padding-top: 50px;
   display: grid;
-  grid-template-columns: repeat(3, minmax(250px, 380px));
+  grid-template-columns: minmax(250px, 380px);
   justify-content: center;
   gap: 50px;
+  @media screen and (min-width: 850px){
+    grid-template-columns: repeat(3, minmax(250px, 380px));
+  }
 }
 /* #contenedor-especifico > .column-item > .circulo{
   width: 150px;
@@ -562,9 +571,28 @@ header{
 #contenedor-especifico > .column-item{
   background-color: white;
   padding: 20px;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.7));
+  transition-duration: 1s;
+}
+#contenedor-especifico > .column-item:hover{
+  @media screen and (min-width: 850px){
+    transform: translate(0, 50px);
+    transition-duration: 1s;
+    filter: drop-shadow(0 3px 6px #d93611b0);
+  }
+  
 }
 #contenedor-especifico > .column-item:nth-child(2){
-  margin-top: 80px;
+  
+  @media screen and (min-width: 850px){
+    margin-top: 60px;
+  }
+}
+#contenedor-especifico > .column-item:nth-child(1), #contenedor-especifico > .column-item:nth-child(3){
+  
+  @media screen and (min-width: 850px){
+    margin-bottom: 80px;
+  }
 }
 #contenedor-especifico > .column-item > .contenido > h3 {
   font-size: 20px;
@@ -573,6 +601,7 @@ header{
 #contenedor-especifico > .column-item > img{
   width: 100%;
   border-radius: 5px;
+  height: 50%;
 }
 
 #pedidos{
@@ -634,6 +663,7 @@ header{
   justify-self: end;
   color: green;
 }
-
+/* 
 @custom-media --limited-height screen and (height >= 555px);
 >>>>>>> b133ad2886db93808481958dccad71f528394766
+ */

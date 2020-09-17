@@ -230,13 +230,6 @@ header{
   position: relative;
   z-index: 6;
 }
-@media screen and (min-height: 555px){
-
-  .index-carousel > .carousel-inner > .carousel-item,
-.index-carousel > .carousel-inner > .main-cover{
-    height: 100vh
-  }
-}
 .index-carousel > .carousel-inner > .carousel-item > img{
   position: absolute;
   -o-object-fit: cover;
@@ -545,10 +538,12 @@ header{
   color: var(--PrimarioVino);
 }
 
-<<<<<<< HEAD
+/* <<<<<<< HEAD
+@custom-media --limited-height screen and (height >= 555px); */
+
 /*SECCION QUIENES SOMOS*/
 #nosotros {
-  background-color: #eeeaea;
+  background-color: #dfdddd;
   padding: 30px;
 }
 #nosotros > .contenedor-general{
@@ -563,12 +558,26 @@ header{
   font-size: 30px;
   font-weight: 700;
 }
+#nosotros > .contenedor-general > h4{
+  padding-top: 100px;
+  padding-bottom: 50px;
+  font-weight: 700;
+  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur in="SourceAlpha" stdDeviation="3" /><feOffset dx="1" dy="3" result="offsetblur" /><feFlood flood-color="rgba(0,0,0,0.7)" /><feComposite in2="offsetblur" operator="in" /><feMerge><feMergeNode /><feMergeNode in="SourceGraphic" /></feMerge></filter></svg>#filter');
+  -webkit-filter: drop-shadow(0 2px 3px rgba(0, 0, 0, .7));
+          filter: drop-shadow(0 2px 3px rgba(0, 0, 0, .7));
+}
 #contenedor-especifico{
   padding-top: 50px;
   display: grid;
-  grid-template-columns: repeat(3, minmax(250px, 380px));
+  grid-template-columns: minmax(250px, 380px);
   justify-content: center;
   gap: 50px;
+}
+@media screen and (min-width: 850px){
+
+  #contenedor-especifico{
+    grid-template-columns: repeat(3, minmax(250px, 380px))
+  }
 }
 /* #contenedor-especifico > .column-item > .circulo{
   width: 150px;
@@ -585,9 +594,35 @@ header{
 #contenedor-especifico > .column-item{
   background-color: white;
   padding: 20px;
+  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur in="SourceAlpha" stdDeviation="3" /><feOffset dx="1" dy="3" result="offsetblur" /><feFlood flood-color="rgba(0,0,0,0.7)" /><feComposite in2="offsetblur" operator="in" /><feMerge><feMergeNode /><feMergeNode in="SourceGraphic" /></feMerge></filter></svg>#filter');
+  -webkit-filter: drop-shadow(0 2px 3px rgba(0, 0, 0, .7));
+          filter: drop-shadow(0 2px 3px rgba(0, 0, 0, .7));
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
 }
-#contenedor-especifico > .column-item:nth-child(2){
-  margin-top: 80px;
+@media screen and (min-width: 850px){
+
+  #contenedor-especifico > .column-item:hover{
+    -webkit-transform: translate(0, 50px);
+            transform: translate(0, 50px);
+    -webkit-transition-duration: 1s;
+            transition-duration: 1s;
+    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur in="SourceAlpha" stdDeviation="6" /><feOffset dx="1" dy="4" result="offsetblur" /><feFlood flood-color="rgba(217,54,17,0.6902)" /><feComposite in2="offsetblur" operator="in" /><feMerge><feMergeNode /><feMergeNode in="SourceGraphic" /></feMerge></filter></svg>#filter');
+    -webkit-filter: drop-shadow(0 3px 6px rgba(217, 54, 17, 0.6902));
+            filter: drop-shadow(0 3px 6px rgba(217, 54, 17, 0.6902))
+  }
+}
+@media screen and (min-width: 850px){
+
+  #contenedor-especifico > .column-item:nth-child(2){
+    margin-top: 60px
+  }
+}
+@media screen and (min-width: 850px){
+
+  #contenedor-especifico > .column-item:nth-child(1), #contenedor-especifico > .column-item:nth-child(3){
+    margin-bottom: 80px
+  }
 }
 #contenedor-especifico > .column-item > .contenido > h3 {
   font-size: 20px;
@@ -596,7 +631,9 @@ header{
 #contenedor-especifico > .column-item > img{
   width: 100%;
   border-radius: 5px;
+  height: 50%;
 }
+
 #pedidos{
   width: 100%;
   max-width: 400px;
@@ -659,5 +696,8 @@ header{
 #pedidos > .total-factura > span:nth-of-type(2){
   justify-self: end;
   color: green;
->>>>>>> b133ad2886db93808481958dccad71f528394766
 }
+/* 
+@custom-media --limited-height screen and (height >= 555px);
+>>>>>>> b133ad2886db93808481958dccad71f528394766
+ */
