@@ -1,0 +1,201 @@
+:root{
+  --input-text:{
+    width: 100%;
+    padding: 5px;
+    height: 35px;
+    border: none;
+    /* border-radius: 5px; */
+  }
+
+  --button:{
+    max-height: 34px;
+    padding: 5px 10px;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    background-color: var(--PrimarioNaranja);
+  }
+
+  --titulo{
+    padding-bottom: 30px;
+    text-align: center;
+    text-decoration-line: underline;
+    color: var(--PrimarioVino);
+    font-weight: 600;
+    font-size: 1.5em;
+  }
+}
+#factura{
+  display: grid;
+  grid-template-columns: minmax(100px, 600px);
+  justify-content: center;
+  
+  @media screen and (min-width: 768px){
+    margin-top: 80px;
+  }
+}
+#factura > .factura-container{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 150px;
+  gap: 15px;
+  
+  @media screen and (min-width: 768px){
+    grid-template-columns: 150px 1fr;
+  }
+} 
+#factura > .factura-container > .logo-container{
+  justify-self: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  /* max-width: 400px; */
+  
+  @media screen and (min-width: 576px){
+    /* grid-template-rows: 215px auto; */
+  }
+}
+#factura > .factura-container > .logo-container > .img-container{
+  padding: 15px;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  background-image: url(../../dist/img/marco.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#factura > .factura-container > .logo-container > .img-container img{
+  /* width: 100%; */
+  height: 100%;
+  
+  @media screen and (min-width: 576px){
+    /* width: unset; */
+  }
+  @media screen and (min-width: 768px){
+    height: unset;
+    width: 100%;
+  }
+}
+#factura > .factura-container > .resto-info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+#factura > .factura-container > .resto-info > h6{
+  font-weight: 500;
+  font-size: 1.8em;
+  color: #404040;
+  
+  @media screen and (min-width: 576px){
+    font-size: 2em;
+  }
+}
+#factura > .factura-container > .resto-info > p{
+  font-size: 1.5em;
+}
+#factura > .factura-container > .input-container{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  /* justify-items: center; */
+  
+  @media screen and (min-width: 576px){
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media screen and (min-width: 768px){
+    grid-column: 1 / 3;
+  }
+}
+#factura > .factura-container > .input-container > input{
+  display: none;
+}
+#factura > .factura-container > .input-container > input:checked + label{
+  background-color: var(--PrimarioVino);
+}
+#factura > .factura-container > .input-container > label{
+  @apply --button;
+  margin: 0;
+  
+  @media screen and (min-width: 576px){
+    /* justify-self: center; */
+  }
+}
+#factura > .factura-container > .input-container > label:hover{
+  background-color: color(#d93611 b(0%));
+}
+
+#pedidos{
+  grid-row: unset;
+  grid-template-columns: minmax(100px, 768px);
+
+  @media screen and (min-width: 768px){
+    grid-column: 1 / 3;
+  }
+}
+
+#info-cliente{
+  display: grid;
+  grid-template-columns: minmax(100px, 768px);
+  justify-content: center;
+}
+#info-cliente > .info-cliente-container{
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: 30px;
+}
+#info-cliente > .info-cliente-container > h5{
+  @apply --titulo;
+  padding-bottom: 0;
+}
+#info-cliente > .info-cliente-container > .formulario{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: 15px;
+  
+  @media screen and (min-width: 576px){
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+#info-cliente > .info-cliente-container > .formulario.delivery{
+  @media screen and (min-width: 576px){
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+#info-cliente > .info-cliente-container > .formulario input{
+  @apply --input-text;
+  border: 1px solid var(--sombraClara);
+}
+#info-cliente > .info-cliente-container > .formulario textarea{
+  border: 1px solid var(--sombraClara);
+  padding: 10px;
+  resize: none;
+  height: 100px;
+  width: 100%;
+
+  @media screen and (min-width: 576px){
+    grid-column: 1 / 4;
+  }
+}
+#info-cliente > .info-cliente-container > .formulario.delivery textarea{
+  @media screen and (min-width: 576px){
+    grid-column: 1 / 5;
+  }
+}
+
+#info-cliente > .info-cliente-container > .button-container{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: 10px;
+}
+#info-cliente > .info-cliente-container > .button-container button{
+  @apply --button;
+}
+

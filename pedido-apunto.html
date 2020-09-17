@@ -18,7 +18,7 @@
   <!-- Your custom styles (optional) -->
   <link rel="stylesheet" href="dist/css/style.css">
   <link rel="stylesheet" href="dist/css/index-results.css">
-  <link rel="stylesheet" href="dist/css/pedido-prehecho.css">
+  <link rel="stylesheet" href="dist/css/pedido-apunto.css">
 </head>
 <body>
 
@@ -69,117 +69,103 @@
   </header>
 
   <main>
+    
+    <section id="factura" class="pb-5 pt-4 pt-lg-5 px-2 px-md-3">
 
-    <section id="menu" class="pb-5 pt-4 pt-lg-5 px-2 px-md-3">
-        
-      <div class="specific-container  px-3 px-md-0">
+      <div class="factura-container">
+
+        <div class="logo-container">
+                   
+          <div class="img-container">
+            <img src="dist/img/ZonaResto vino.png" alt="">
+          </div>
+  
+        </div>
+  
+        <div class="resto-info p-2 pr-md-5">
+          <h6>La Cocina de Alex</h6>
+          <p>Calle, Nombre, 234</p>
+        </div>
+  
+        <div class="input-container">
+  
+          <input type="radio" checked name="delivery-retiro" id="retiro">
+          <label class="waves-effect waves-light" for="retiro">Lo paso buscando</label>
           
-        <div class="item-container">
-
-          <a class="img-container">
-            <div class="img-frame">
-              <img src="./dist/img/cover-2.png" alt="">
-            </div>
-          </a>
-
-          <div class="description-container">
-            <a href="" class="titulo">
-              <h4 class="font-weight-bold">Arepa</h4>
-            </a>
-
-            <div class="description">
-              <p>Rellena de Pollo o Cochino, Rellena de Pollo o Cochino</p>
-              <p>180$</p>
-              <!-- <p>Horario de Atención: 09:00am a 20:00pm</p> -->
-            </div>
-          </div>
-
-          <div class="cantidad-pedidos">
-
-            <a href="#?" class="fas fa-caret-left"></a>
-            <span class="">0</span>
-            <a href="#?" class="fas fa-caret-right"></a>
-
-          </div>
-
+          <input type="radio" name="delivery-retiro" id="delivery">
+          <label class="waves-effect waves-light" for="delivery">Envialo a mi dirección</label>
+  
         </div>
-
-        <div class="item-container">
-
-          <a class="img-container">
-            <div class="img-frame">
-              <img src="./dist/img/cover-2.png" alt="">
+  
+        <div id="pedidos" class="pt-4 pb-5 mx-sm-5 mx-md-0 px-3">
+          <h6>Mi Pedido</h6>
+  
+          <div class="items-factura pb-4">
+            <div class="item">
+              <span>3</span>
+              <span>Arepa</span>
+              <span>$360</span>
             </div>
-          </a>
-
-          <div class="description-container">
-            <a href="" class="titulo">
-              <h4 class="font-weight-bold">Arepa</h4>
-            </a>
-
-            <div class="description">
-              <p>Rellena de Pollo o Cochino, Rellena de Pollo o Cochino</p>
-              <p>180$</p>
-              <!-- <p>Horario de Atención: 09:00am a 20:00pm</p> -->
+            
+            <div class="item">
+              <span>3</span>
+              <span>Arepa</span>
+              <span>$360</span>
             </div>
+  
+            <div class="item">
+              <span>3</span>
+              <span>Arepa</span>
+              <span>$360</span>
+            </div>
+  
+            <div class="item">
+              <span>3</span>
+              <span>Arepa</span>
+              <span>$360</span>
+            </div>
+  
           </div>
-
-          <div class="cantidad-pedidos">
-
-            <a href="#?" class="fas fa-caret-left"></a>
-            <span class="">0</span>
-            <a href="#?" class="fas fa-caret-right"></a>
-
+  
+          <div class="total-factura">
+            <span>Monto Total:</span>
+            <span>$15000</span>
           </div>
-
-        </div>
-
-        <div class="hacer-pedido">
-          <a class="main-link waves-effect waves-dark" href="#?">Realizar Pedido</a>
-          <a class="rate-us-link" href="#?">¿Ya has comido aquí? <span>Calificanos</span></a>
+  
         </div>
 
       </div>
 
-      <div id="pedidos" class="pt-4 pb-5 mx-sm-5 mx-md-0 px-3">
-        <h6>Mi Pedido</h6>
-
-        <div class="items-factura pb-4">
-          <div class="item">
-            <span>3</span>
-            <span>Arepa</span>
-            <span>$360</span>
-          </div>
-          
-          <div class="item">
-            <span>3</span>
-            <span>Arepa</span>
-            <span>$360</span>
-          </div>
-
-          <div class="item">
-            <span>3</span>
-            <span>Arepa</span>
-            <span>$360</span>
-          </div>
-
-          <div class="item">
-            <span>3</span>
-            <span>Arepa</span>
-            <span>$360</span>
-          </div>
-
-        </div>
-
-        <div class="total-factura">
-          <span>Monto Total:</span>
-          <span>$15000</span>
-        </div>
-
-      </div>
-        
     </section>
 
+    <section id="info-cliente" class="pb-5 px-2 px-sm-4 px-md-5">
+      
+      <form class="info-cliente-container">
+
+        <h5>Datos de Cliente</h5>
+  
+        <div class="formulario" action="">
+          
+          <input placeholder="Nombre" type="text" name="nombre" id="">
+          <input placeholder="Teléfono" type="tel" name="telefono" id="">
+          <input placeholder="Hora de Retiro" type="number" name="hora-retiro" id="">
+          <input placeholder="Dirección" class="d-none" type="text" name="hora-retiro" id="">
+    
+          <textarea name="" id=""></textarea>
+  
+        </div>
+  
+        <div class="button-container">
+    
+          <button type="submit" class="waves-effect waves-dark">Envialo a mi dirección</button>
+  
+        </div>
+
+      </form>
+
+
+    </section>
+    
   </main>
   
   <footer class="main-footer mt-md-5">
@@ -197,6 +183,7 @@
   <script type="text/javascript" src="src/js/renderFooter.js"></script>
   <script type="text/javascript" src="src/js/hideShowModals.js"></script>
   <script type="text/javascript" src="src/js/hamburger.js"></script>
+  <script type="text/javascript" src="src/js/delivery.js"></script>
   <!-- Your custom scripts (optional) -->
   <script type="text/javascript"></script>
   
