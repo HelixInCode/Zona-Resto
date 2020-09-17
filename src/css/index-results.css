@@ -66,14 +66,6 @@
       background-color: var(--sombra);
       transition: .3s;
     }
-  }
-  
-*, ul, p{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    border: none;
-    outline: none;
 }
 
 .nav-principal{

@@ -68,15 +68,12 @@
   }
 }
 
-*{
+*, p, ul, a, label, button{
   margin: 0;
   padding: 0;
   list-style: none;
   border: none;
   outline: none;
-}
-p, ul{
-  margin: 0;
 }
 header{
   position: relative;
@@ -523,6 +520,7 @@ header{
   color: var(--PrimarioVino);
 }
 
+<<<<<<< HEAD
 @custom-media --limited-height screen and (height >= 555px);
 
 /*SECCION QUIENES SOMOS*/
@@ -576,3 +574,66 @@ header{
   width: 100%;
   border-radius: 5px;
 }
+
+#pedidos{
+  width: 100%;
+  max-width: 400px;
+  grid-row: 1 / 2;
+  justify-self: center;
+  align-self: start;
+  color: var(--PrimarioVino);
+  background-color: var(--SecundarioAmarillo);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  text-align: center;
+  clip-path: polygon(13% 90%, 0 100%, 0 0, 100% 0, 100% 100%, 88% 90%, 75% 100%, 63% 90%, 50% 100%, 38% 90%, 25% 100%);
+  
+  @media screen and (min-width: 768px){
+    grid-row: unset;
+  }
+}
+#pedidos > h6{
+  font-weight: bold;
+}
+#pedidos > .items-factura{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+#pedidos > .items-factura > .item{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+#pedidos > .items-factura > .item > span:nth-of-type(1){
+  justify-self: start;
+}
+#pedidos > .items-factura > .item > span:nth-of-type(2){
+  justify-self: center;
+}
+#pedidos > .items-factura > .item > span:nth-of-type(3){
+  justify-self: end;
+  font-weight: bold;
+}
+#pedidos > .total-factura{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+#pedidos > .total-factura{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  font-weight: bold;
+}
+#pedidos > .total-factura > span:nth-of-type(1){
+  justify-self: start;
+}
+#pedidos > .total-factura > span:nth-of-type(2){
+  justify-self: end;
+  color: green;
+}
+
+@custom-media --limited-height screen and (height >= 555px);
+>>>>>>> b133ad2886db93808481958dccad71f528394766

@@ -12,14 +12,6 @@
     --sombra: rgba(0, 0, 0, .5);
     --sombraClara: rgba(0, 0, 0, .25);
     --radioButtonSpace: 30px
-  }
-  
-*, ul, p{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    border: none;
-    outline: none;
 }
 
 .nav-principal{
@@ -40,7 +32,7 @@
 }
 
 @media screen and (min-width: 768px){
-  
+
     .nav-principal{
         position: fixed;
         grid-template-columns: 120px 1fr auto
@@ -85,13 +77,13 @@
     transition: .3s;
 }
 @media screen and (min-width: 412px){
-  
+
     .nav-principal > form{
         width: 391px
     }
 }
 @media screen and (min-width: 768px){
-  
+
     .nav-principal > form{
         width: unset;
         position: unset;
@@ -115,7 +107,7 @@
     padding-left: 40px;
 }
 @media screen and (min-width: 768px){
-  
+
     .nav-principal > form > .input-container > input{
         border: 1px solid var(--PrimarioVino)
     }
@@ -125,7 +117,7 @@
     border-top-right-radius: 5px;
 }
 @media screen and (min-width: 768px){
-  
+
     .nav-principal > form > .input-container:nth-of-type(1) > input{
         border-top-right-radius: unset;
         border-bottom-left-radius: 5px
@@ -146,7 +138,7 @@
     outline: none;
 }
 @media screen and (min-width: 768px){
-  
+
     .nav-principal > form >  button{
         padding: unset;
         border: 1px solid var(--PrimarioVino);
@@ -155,7 +147,7 @@
     }
 }
 @media screen and (min-width: 768px){
-  
+
     .nav-principal > form >  button:hover{
         background-color: var(--SecundarioNaranja);
         -webkit-transition-duration: 0.5s;
@@ -168,7 +160,7 @@
     font-size: 18px;
 }
 @media screen and (min-width: 768px){
-  
+
     .nav-principal > form >  button:hover > i{
         font-size: 25px;
         -webkit-transition-duration: 0.3s;
@@ -205,7 +197,7 @@
 }
 
 @media screen and (min-width: 768px){
-  
+
     #main-results{
         display: grid;
         grid-template-columns: 200px 1fr;
@@ -226,7 +218,7 @@
 }
 
 @media screen and (min-width: 768px){
-  
+
     #categorias{
         top: 80px;
         z-index: 5;
@@ -338,7 +330,7 @@
     justify-content: center;
 }
 @media screen and (min-width: 768px){
-  
+
     #results{
         margin-top: 80px
     }
@@ -389,7 +381,7 @@ background-color: var(--sombra);
     border-bottom: 3px solid #E3E3E3;
 }
 @media screen and (min-width: 576px){
-  
+
     #results > .specific-container > .item-container{
         padding-bottom: 0;
         border-bottom: unset;
@@ -437,7 +429,7 @@ background-color: var(--sombra);
     
 }
 @media screen and (min-width: 768px){
-  
+
     #results > .specific-container > .item-container > .description-container{
         text-align: left;
         text-align: initial
@@ -471,7 +463,7 @@ background-color: var(--sombra);
     right: 0;
 }
 @media screen and (min-width: 576px){
-  
+
     #results > .specific-container > .item-container > .rate-us{
         position: unset
     }
@@ -489,7 +481,7 @@ background-color: var(--sombra);
     grid-row: 2 / 3;
 }
 @media screen and (min-width: 576px){
-  
+
     #results > .specific-container > .item-container > .info{
         grid-column: 1 / 4;
         grid-row: unset
@@ -501,7 +493,7 @@ background-color: var(--sombra);
     justify-content: flex-end;
 }
 @media screen and (min-width: 576px){
-  
+
     #results > .specific-container > .item-container > .info > .delivery{
         grid-column: 1 / 4;
         border-bottom: 3px solid #E3E3E3
