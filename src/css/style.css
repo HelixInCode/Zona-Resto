@@ -393,7 +393,7 @@ header{
 }
 :--inner-footer{
   display: grid;
-  grid-template-columns: minmax(250px, 1fr);
+  grid-template-columns: 1fr;
   grid-template-rows: repeat(5, auto) 174px;
   row-gap: 25px;
   color: #fff;
@@ -419,15 +419,20 @@ header{
   justify-self: center;
 }
 :--inner-footer > .footer-links > ul{
-  display: grid;
+  /* display: grid;
   grid-template-columns: 1fr;
-  gap: 10px;
   justify-items: center;
+  gap: 10px; */
+  text-align: center;
   font-weight: 500;
-
+  
   @media screen and (min-width: 768px){
+    text-align: unset;
     justify-items: unset;
   }
+}
+:--inner-footer > .footer-links > ul > li{
+  padding-bottom: 10px;
 }
 :--inner-footer > .footer-social-links{
   display: flex;

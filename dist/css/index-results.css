@@ -208,7 +208,7 @@
   
     #main-results{
         display: grid;
-        grid-template-columns: 268px 1fr;
+        grid-template-columns: 200px 1fr;
         gap: 30px
     }
 }
@@ -220,7 +220,7 @@
   left: 0;
   bottom: 0;
   /* color: var(--SecundarioAmarillo); */
-  width: 268px;
+  width: 200px;
   /* background-color: var(--PrimarioNaranja); */
   background-color: #ededed;
 }
@@ -486,7 +486,6 @@ background-color: var(--sombra);
             clip-path: polygon(13% 90%, 0 100%, 0 0, 100% 0, 100% 100%, 88% 90%, 75% 100%, 63% 90%, 50% 100%, 38% 90%, 25% 100%);
 }
 #results > .specific-container > .item-container > .info{
-    text-align: end;
     grid-row: 2 / 3;
 }
 @media screen and (min-width: 576px){
@@ -498,8 +497,8 @@ background-color: var(--sombra);
 }
 #results > .specific-container > .item-container > .info > .delivery{
     /* filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7)); */
-    display: grid;
-    justify-items: end;
+    display: flex;
+    justify-content: flex-end;
 }
 @media screen and (min-width: 576px){
   
@@ -508,7 +507,8 @@ background-color: var(--sombra);
         border-bottom: 3px solid #E3E3E3
     }
 }
-#results > .specific-container > .item-container > .info > .delivery > p{
+#results > .specific-container > .item-container > .info > .delivery > span{
+    display: inline;
     padding: 5px 30px 5px 40px;
     -webkit-clip-path: polygon(95% 0%, 100% 50%, 95% 100%, 5% 100%, 10% 50%, 5% 0%);
             clip-path: polygon(95% 0%, 100% 50%, 95% 100%, 5% 100%, 10% 50%, 5% 0%);
