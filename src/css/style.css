@@ -520,6 +520,90 @@ header{
   color: var(--PrimarioVino);
 }
 
+/* <<<<<<< HEAD
+@custom-media --limited-height screen and (height >= 555px); */
+
+/*SECCION QUIENES SOMOS*/
+#nosotros {
+  background-color: #dfdddd;
+  padding: 30px;
+}
+#nosotros > .contenedor-general{
+  display: grid;
+  grid-template-columns: minmax(250px, 1200px);
+  justify-content: center;
+  text-align: center;
+  color: #410c3a;
+}
+#nosotros > .contenedor-general > h3{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 30px;
+  font-weight: 700;
+}
+#nosotros > .contenedor-general > h4{
+  padding-top: 100px;
+  padding-bottom: 50px;
+  font-weight: 700;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.7));
+}
+#contenedor-especifico{
+  padding-top: 50px;
+  display: grid;
+  grid-template-columns: minmax(250px, 380px);
+  justify-content: center;
+  gap: 50px;
+  @media screen and (min-width: 850px){
+    grid-template-columns: repeat(3, minmax(250px, 380px));
+  }
+}
+/* #contenedor-especifico > .column-item > .circulo{
+  width: 150px;
+  margin: 20px;
+  height: 150px;
+  background-color: #ffe677c9;
+  clip-path: circle(50% at 50% 50%);
+  margin-left: auto;
+  margin-right: auto;
+  border: 3px solid #febf51c0;
+  border-radius: 100%;
+  position: relative;
+} */
+#contenedor-especifico > .column-item{
+  background-color: white;
+  padding: 20px;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.7));
+  transition-duration: 1s;
+}
+#contenedor-especifico > .column-item:hover{
+  @media screen and (min-width: 850px){
+    transform: translate(0, 50px);
+    transition-duration: 1s;
+    filter: drop-shadow(0 3px 6px #d93611b0);
+  }
+  
+}
+#contenedor-especifico > .column-item:nth-child(2){
+  
+  @media screen and (min-width: 850px){
+    margin-top: 60px;
+  }
+}
+#contenedor-especifico > .column-item:nth-child(1), #contenedor-especifico > .column-item:nth-child(3){
+  
+  @media screen and (min-width: 850px){
+    margin-bottom: 80px;
+  }
+}
+#contenedor-especifico > .column-item > .contenido > h3 {
+  font-size: 20px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#contenedor-especifico > .column-item > img{
+  width: 100%;
+  border-radius: 5px;
+  height: 50%;
+}
+
 #pedidos{
   width: 100%;
   max-width: 400px;
@@ -579,5 +663,7 @@ header{
   justify-self: end;
   color: green;
 }
-
+/* 
 @custom-media --limited-height screen and (height >= 555px);
+>>>>>>> b133ad2886db93808481958dccad71f528394766
+ */
