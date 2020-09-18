@@ -132,16 +132,16 @@
 
                         <div class="description">
                             <p>Rellena de Pollo o Cochino, Rellena de Pollo o Cochino</p>
-                            <p>180$</p>
+                            <span>300$</span>
                             <!-- <p>Horario de Atención: 09:00am a 20:00pm</p> -->
                         </div>
                     </div>
 
                     <div class="cantidad-pedidos">
 
-                        <a href="#?" class="fas fa-caret-left"></a>
+                        <button id="decrease" disabled class="fas fa-caret-left"></button>
                         <span class="">0</span>
-                        <a href="#?" class="fas fa-caret-right"></a>
+                        <button id="increase" class="fas fa-caret-right"></button>
 
                     </div>
 
@@ -156,26 +156,26 @@
 
                     <div class="description-container">
                         <a href="" class="titulo">
-                            <h4 class="font-weight-bold">Arepa</h4>
+                            <h4 class="font-weight-bold">Arepa con Carne</h4>
                         </a>
 
                         <div class="description">
-                            <p>Rellena de Pollo o Cochino</p>
-                            <p>180$</p>
+                            <p>Rellena de Pollo o Cochino, Rellena de Pollo o Cochino</p>
+                            <span>180$</span>
                             <!-- <p>Horario de Atención: 09:00am a 20:00pm</p> -->
                         </div>
                     </div>
 
                     <div class="cantidad-pedidos">
 
-                        <a href="#?" class="fas fa-caret-left"></a>
+                        <button id="decrease" disabled class="fas fa-caret-left"></button>
                         <span class="">0</span>
-                        <a href="#?" class="fas fa-caret-right"></a>
+                        <button id="increase" class="fas fa-caret-right"></button>
 
                     </div>
 
-                </div>  
-                
+                </div>
+
                 <div class="item-container">
                     <a class="img-container">
                         <div class="img-frame">
@@ -185,61 +185,47 @@
 
                     <div class="description-container">
                         <a href="" class="titulo">
-                            <h4 class="font-weight-bold">Arepa</h4>
+                            <h4 class="font-weight-bold">Arepa con Queso</h4>
                         </a>
 
                         <div class="description">
-                            <p>Rellena de Pollo o Cochino</p>
-                            <p>180$</p>
+                            <p>Rellena de Pollo o Cochino, Rellena de Pollo o Cochino</p>
+                            <span>10$</span>
                             <!-- <p>Horario de Atención: 09:00am a 20:00pm</p> -->
                         </div>
                     </div>
 
                     <div class="cantidad-pedidos">
 
-                        <a href="#?" class="fas fa-caret-left"></a>
+                        <button id="decrease" disabled class="fas fa-caret-left"></button>
                         <span class="">0</span>
-                        <a href="#?" class="fas fa-caret-right"></a>
+                        <button id="increase" class="fas fa-caret-right"></button>
 
                     </div>
 
-                </div>  
+                </div>
+
+                <div class="hacer-pedido">
+                    <a class="main-link waves-effect waves-dark" href="#?">Realizar Pedido</a>
+                    <a class="rate-us-link" href="#?">¿Ya has comido aquí? <span>Calificanos</span></a>
+                </div>
 
             </div>
 
             <div id="pedidos" class="pt-4 pb-5 mx-sm-5 mx-md-0 px-3">
                 <h6>Mi Pedido</h6>
         
-                <div class="items-factura pb-4">
-                  <div class="item">
-                    <span>3</span>
-                    <span>Arepa</span>
-                    <span>$360</span>
-                  </div>
-                  
-                  <div class="item">
-                    <span>3</span>
-                    <span>Arepa</span>
-                    <span>$360</span>
-                  </div>
-        
-                  <div class="item">
-                    <span>3</span>
-                    <span>Arepa</span>
-                    <span>$360</span>
-                  </div>
-        
-                  <div class="item">
-                    <span>3</span>
-                    <span>Arepa</span>
-                    <span>$360</span>
-                  </div>
-        
+                <div class="items-factura pb-4 d-none">
+                  <!-- insertado por js -->
                 </div>
-        
-                <div class="total-factura">
+                
+                <div class="total-factura d-none" data-montoTotal="">
                   <span>Monto Total:</span>
-                  <span>$15000</span>
+                  <span>$0</span>
+                </div>
+
+                <div class="img-container">
+                    <img class="img-fluid" src="dist/img/icons8-comida-100.png" alt="">
                 </div>
         
             </div>
@@ -262,6 +248,7 @@
     <script type="text/javascript" src="src/js/renderFooter.js"></script>
     <script type="text/javascript" src="src/js/hideShowModals.js"></script>
     <script type="text/javascript" src="src/js/hamburger.js"></script>
+    <script type="text/javascript" src="src/js/UpDownPedido.js"></script>
     <!-- Your custom scripts (optional) -->
     <script type="text/javascript"></script>
   

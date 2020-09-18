@@ -349,7 +349,7 @@ background-color: var(--sombra);
   grid-template-rows: 1fr auto;
   gap: 5px;
 }
-#menu > .specific-container > .item-container > .description-container > .description > p:nth-child(2){
+#menu > .specific-container > .item-container > .description-container > .description > span{
   color: green;
 }
 #menu > .specific-container > .item-container > .cantidad-pedidos{
@@ -374,9 +374,38 @@ background-color: var(--sombra);
   align-items: center;
 }
 #menu > .specific-container > .item-container > .cantidad-pedidos > .fas{
+  border: none;
   background-color: var(--PrimarioVino);
   color: #fff;
 }
 #menu > .specific-container > .item-container > .cantidad-pedidos > .fas:hover{
   background-color: rgb(179, 13, 156);
+}
+#menu > .specific-container > .hacer-pedido{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#menu > .specific-container > .hacer-pedido > .main-link{
+  max-height: 34px;
+  padding: 5px 10px;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  background-color: var(--PrimarioNaranja);
+}
+@media screen and (min-width: 576px){
+  #menu > .specific-container > .hacer-pedido > .main-link{
+    justify-self: center;
+  }
+}
+#menu > .specific-container > .hacer-pedido > .main-link:hover{
+  background-color: rgb(255, 61, 18);
+}
+#menu > .specific-container > .hacer-pedido > .rate-us-link{
+  padding-top: 10px;
+  color: var(--PrimarioVino);
+}
+#menu > .specific-container > .hacer-pedido > .rate-us-link > span{
+  font-weight: bold;
 }

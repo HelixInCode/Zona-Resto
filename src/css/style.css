@@ -73,7 +73,7 @@
   padding: 0;
   list-style: none;
   border: none;
-  outline: none;
+  outline: none !important;
 }
 header{
   position: relative;
@@ -540,6 +540,7 @@ header{
 }
 #pedidos > h6{
   font-weight: bold;
+  margin-bottom: 25px;
 }
 #pedidos > .items-factura{
   display: grid;
@@ -548,17 +549,16 @@ header{
 }
 #pedidos > .items-factura > .item{
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 18px 1fr auto;
   gap: 20px;
 }
 #pedidos > .items-factura > .item > span:nth-of-type(1){
-  justify-self: start;
+  justify-self: end;
 }
 #pedidos > .items-factura > .item > span:nth-of-type(2){
-  justify-self: center;
+  justify-self: start;
 }
 #pedidos > .items-factura > .item > span:nth-of-type(3){
-  justify-self: end;
   font-weight: bold;
 }
 #pedidos > .total-factura{
