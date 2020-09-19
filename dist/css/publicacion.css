@@ -402,10 +402,3 @@ background-color: var(--sombra);
 #menu > .specific-container > .hacer-pedido > .main-link:hover{
   background-color: rgb(255, 61, 18);
 }
-#menu > .specific-container > .hacer-pedido > .rate-us-link{
-  padding-top: 10px;
-  color: var(--PrimarioVino);
-}
-#menu > .specific-container > .hacer-pedido > .rate-us-link > span{
-  font-weight: bold;
-}

@@ -368,10 +368,3 @@ background-color: var(--sombra);
 #menu > .specific-container > .hacer-pedido > .main-link:hover{
   background-color: color(#d93611 b(0%));
 }
-#menu > .specific-container > .hacer-pedido > .rate-us-link{
-  padding-top: 10px;
-  color: var(--PrimarioVino);
-}
-#menu > .specific-container > .hacer-pedido > .rate-us-link > span{
-  font-weight: bold;
-}

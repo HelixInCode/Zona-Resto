@@ -1,5 +1,7 @@
 const $publicaciones = document.querySelector('#menu > .specific-container')
 const $factura = document.getElementById('pedidos')
+const $realizarPedido = document.getElementById('realizarPedido')
+
 const facturaItemTemplate = (nombre, cantidad, precio) =>{
   return `<div class="item">
             <span class="cantidad-plato" data-cantidad="${cantidad}">${cantidad}</span>
@@ -10,9 +12,45 @@ const facturaItemTemplate = (nombre, cantidad, precio) =>{
             </span>
           </div>`
 }
-
 const addItemFactura = (nombre, cantidad, precio)=>{
   $factura.children[1].innerHTML += facturaItemTemplate(nombre, cantidad, precio)
+}
+const obtenerNombreResto = (selector) => {
+  let nombreResto = Array.from(document.querySelector(selector).innerText)
+  nombreResto = nombreResto.filter(item => item !== " ")
+  return nombreResto = nombreResto.join('')  
+}
+
+const selector = '#publicacion > .publicacion-container > .description-container > .title-rank-container > h1'
+const nombreResto = obtenerNombreResto(selector)
+const listaDeCompra = `${nombreResto}listaDeCompra`
+const montoTotal = `${nombreResto}montoTotal`
+
+if(sessionStorage.getItem(listaDeCompra) && sessionStorage.getItem(montoTotal)){
+
+  $factura.children[1].innerHTML += sessionStorage.getItem(listaDeCompra)
+  $factura.children[2].innerHTML += sessionStorage.getItem(montoTotal)
+
+  $factura.children[1].classList.remove('d-none') //Container con los items de la factura
+  $factura.children[2].classList.remove('d-none') //Container con el monto total de la factura
+  $factura.children[3].classList.add('d-none') //Container con el monto total de la factura
+
+  let platosMenu = Array.from(document.getElementsByClassName('item-container'))
+  let platosIngresados = JSON.parse(sessionStorage.getItem('platosIngresados'))
+
+  platosMenu.forEach(plato =>{
+    let platoEncontrado = platosIngresados.find(platoIngresado =>{
+      
+      return platoIngresado.nombre === plato.children[1].children[0].innerText
+    })
+    if(platoEncontrado){
+      if(platoEncontrado.cantidad > 0){
+        plato.children[2].children[0].removeAttribute('disabled')
+      }
+      plato.children[2].children[1].innerText = platoEncontrado.cantidad
+    }
+  })
+  // document.getElementsByClassName('item-container')[0].children[2].children[1].innerText
 }
 
 $publicaciones.addEventListener('click', (event)=>{
@@ -25,7 +63,6 @@ $publicaciones.addEventListener('click', (event)=>{
 
   if (SI_ES_UN_BUTTON) {
     numero = parseInt(event.path[1].children[1].innerHTML)
-    // console.log(event)
     
     if (SI_EL_BUTTON_ES_INCREASE) {
 
@@ -38,7 +75,6 @@ $publicaciones.addEventListener('click', (event)=>{
       }
 
     }else if(SI_EL_BUTTON_ES_DECREASE){
-      
       
       if(numero > 0){
         if(numero === 1){
@@ -58,11 +94,9 @@ $publicaciones.addEventListener('click', (event)=>{
     let precio = parseInt(event.path[2].children[1].children[1].children[1].innerHTML)
     let cantidad = parseInt(event.path[2].children[2].children[1].innerHTML)
 
-    console.log(nombre)
-    console.log(cantidad)
-    console.log(precio)
-
-    // debugger
+    // console.log(nombre)
+    // console.log(cantidad)
+    // console.log(precio)
 
     let platosAdded = Array.from($factura.children[1].getElementsByClassName('nombre-plato'))
 
@@ -72,7 +106,6 @@ $publicaciones.addEventListener('click', (event)=>{
 
     if(itemEncontrado){
       if(cantidad === 0){
-        // debugger
         $factura.children[1].removeChild(itemEncontrado.parentNode)
       }else{
 
@@ -94,18 +127,65 @@ $publicaciones.addEventListener('click', (event)=>{
       precioTotal += parseInt(item.dataset.preciototal)
     })
 
-    $factura.children[2].children[1].innerHTML = `$${precioTotal}`
-    $factura.children[2].dataset.montoTotal = precioTotal
+    //Container con el monto total de la factura
+    $factura.children[2].innerHTML = `<span>Monto Total:</span>
+                                      <span>
+                                        <span>$</span>
+                                        <span>${precioTotal}</span>
+                                      </span>`
+    $factura.children[2].dataset.montototal = precioTotal
 
     if(precioTotal === 0){
-      $factura.children[1].classList.add('d-none')
-      $factura.children[2].classList.add('d-none')
-      $factura.children[3].classList.remove('d-none')
+      $factura.children[1].classList.add('d-none') //Container con los items de la factura
+      $factura.children[2].classList.add('d-none') //Container con el monto total de la factura
+      $factura.children[3].classList.remove('d-none') //Imagen de cubiertos
+
     }else if($factura.children[2].classList.contains('d-none')){
       
-      $factura.children[1].classList.remove('d-none')
-      $factura.children[2].classList.remove('d-none')
-      $factura.children[3].classList.add('d-none')
+      $factura.children[1].classList.remove('d-none') //Container con los items de la factura
+      $factura.children[2].classList.remove('d-none') //Container con el monto total de la factura
+      $factura.children[3].classList.add('d-none') //Imagen de cubiertos
     }
   }
+})
+
+$realizarPedido.addEventListener('click', () =>{
+
+  let arreglo = Array.from($factura.children[1].getElementsByClassName('item'))
+
+  if(arreglo.length){
+
+    let cantidadDeLosPlatos = arreglo.map(item => {
+      let objeto = {}
+  
+      objeto['nombre'] = item.children[1].dataset.nombre
+      objeto['cantidad'] = item.children[0].dataset.cantidad
+  
+      return objeto
+    })
+
+    sessionStorage.setItem(listaDeCompra, $factura.children[1].innerHTML)
+    sessionStorage.setItem(montoTotal, $factura.children[2].innerHTML)
+    sessionStorage.setItem('platosIngresados', JSON.stringify(cantidadDeLosPlatos))
+
+    window.location = 'pedido-apunto.html'
+  }else{
+    alert('no ha elegido ningun producto')
+  }
+  // console.log(arreglo)
+  
+  
+
+
+  // let arregloObjetosPlatos = arreglo.map(item => {
+  //   let objeto = {}
+
+  //   objeto['nombre'] = item.children[1].dataset.nombre
+  //   objeto['cantidad'] = item.children[0].dataset.cantidad
+  //   objeto['precio_por_unidad'] = item.children[2].dataset.precioporunidad
+  //   objeto['precio_total'] = item.children[2].dataset.preciototal
+
+  //   return objeto
+  // })
+  // console.log(arregloObjetos)
 })

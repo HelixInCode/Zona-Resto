@@ -160,11 +160,6 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
-@media screen and (min-width: 576px){
-  #info-cliente > .info-cliente-container > .formulario.delivery{
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
 #info-cliente > .info-cliente-container > .formulario input{
   width: 100%;
   padding: 5px;
@@ -183,11 +178,6 @@
 @media screen and (min-width: 576px){
   #info-cliente > .info-cliente-container > .formulario textarea{
     grid-column: 1 / 4;
-  }
-}
-@media screen and (min-width: 576px){
-  #info-cliente > .info-cliente-container > .formulario.delivery textarea{
-    grid-column: 1 / 5;
   }
 }
 

@@ -162,11 +162,6 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
-#info-cliente > .info-cliente-container > .formulario.delivery{
-  @media screen and (min-width: 576px){
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
 #info-cliente > .info-cliente-container > .formulario input{
   @apply --input-text;
   border: 1px solid var(--sombraClara);
@@ -180,11 +175,6 @@
 
   @media screen and (min-width: 576px){
     grid-column: 1 / 4;
-  }
-}
-#info-cliente > .info-cliente-container > .formulario.delivery textarea{
-  @media screen and (min-width: 576px){
-    grid-column: 1 / 5;
   }
 }
 

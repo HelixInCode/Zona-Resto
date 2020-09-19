@@ -686,7 +686,7 @@ header{
 }
 #pedidos > .total-factura{
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr auto;
   gap: 20px;
   font-weight: bold;
 }

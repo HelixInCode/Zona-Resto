@@ -3,6 +3,7 @@ const $inputForms = document.querySelector('#info-cliente > .info-cliente-contai
 
 const cambiarForm = ()=>{
   $inputForms.classList.toggle('delivery')
+  $inputForms.children[2].classList.toggle('d-none')
   $inputForms.children[3].classList.toggle('d-none')
 }
 
