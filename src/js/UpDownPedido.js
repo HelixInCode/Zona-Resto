@@ -2,6 +2,10 @@ const $publicaciones = document.querySelector('#menu > .specific-container')
 const $factura = document.getElementById('pedidos')
 const $realizarPedido = document.getElementById('realizarPedido')
 
+const $listaDeCompra = $factura.children[1]
+const $montoTotal = $factura.children[2]
+const $imgFactura = $factura.children[3]
+
 const facturaItemTemplate = (nombre, cantidad, precio) =>{
   return `<div class="item">
             <span class="cantidad-plato" data-cantidad="${cantidad}">${cantidad}</span>
@@ -13,12 +17,17 @@ const facturaItemTemplate = (nombre, cantidad, precio) =>{
           </div>`
 }
 const addItemFactura = (nombre, cantidad, precio)=>{
-  $factura.children[1].innerHTML += facturaItemTemplate(nombre, cantidad, precio)
+  $listaDeCompra.innerHTML += facturaItemTemplate(nombre, cantidad, precio)
 }
 const obtenerNombreResto = (selector) => {
   let nombreResto = Array.from(document.querySelector(selector).innerText)
   nombreResto = nombreResto.filter(item => item !== " ")
   return nombreResto = nombreResto.join('')  
+}
+const cambiarEstadoDeLaFactura = ()=>{
+  $listaDeCompra.classList.toggle('d-none') //Container con los items de la factura
+  $montoTotal.classList.toggle('d-none') //Container con el monto total de la factura
+  $imgFactura.classList.toggle('d-none') //Container con el monto total de la factura
 }
 
 const selector = '#publicacion > .publicacion-container > .description-container > .title-rank-container > h1'
@@ -26,31 +35,34 @@ const nombreResto = obtenerNombreResto(selector)
 const listaDeCompra = `${nombreResto}listaDeCompra`
 const montoTotal = `${nombreResto}montoTotal`
 
-if(sessionStorage.getItem(listaDeCompra) && sessionStorage.getItem(montoTotal)){
+const THERES_THIS_RESTO_ITEMS = sessionStorage.getItem(listaDeCompra) && sessionStorage.getItem(montoTotal)
 
-  $factura.children[1].innerHTML += sessionStorage.getItem(listaDeCompra)
-  $factura.children[2].innerHTML += sessionStorage.getItem(montoTotal)
+if(THERES_THIS_RESTO_ITEMS){
+  const sincronizarSelectoresDeLosPlatos = () =>{
+    const platosMenu = Array.from(document.getElementsByClassName('item-container'))
+    const platosIngresados = JSON.parse(sessionStorage.getItem('platosIngresados'))
+  
+    platosMenu.forEach(plato =>{
+      const platoEncontrado = platosIngresados.find(platoIngresado =>{
+        
+        return platoIngresado.nombre === plato.children[1].children[0].innerText
+      })
 
-  $factura.children[1].classList.remove('d-none') //Container con los items de la factura
-  $factura.children[2].classList.remove('d-none') //Container con el monto total de la factura
-  $factura.children[3].classList.add('d-none') //Container con el monto total de la factura
-
-  let platosMenu = Array.from(document.getElementsByClassName('item-container'))
-  let platosIngresados = JSON.parse(sessionStorage.getItem('platosIngresados'))
-
-  platosMenu.forEach(plato =>{
-    let platoEncontrado = platosIngresados.find(platoIngresado =>{
-      
-      return platoIngresado.nombre === plato.children[1].children[0].innerText
-    })
-    if(platoEncontrado){
-      if(platoEncontrado.cantidad > 0){
-        plato.children[2].children[0].removeAttribute('disabled')
+      if(platoEncontrado){
+        if(platoEncontrado.cantidad > 0){
+          plato.children[2].children[0].removeAttribute('disabled')
+        }
+        plato.children[2].children[1].innerText = platoEncontrado.cantidad
       }
-      plato.children[2].children[1].innerText = platoEncontrado.cantidad
-    }
-  })
-  // document.getElementsByClassName('item-container')[0].children[2].children[1].innerText
+    })
+  }
+
+  $listaDeCompra.innerHTML += sessionStorage.getItem(listaDeCompra)
+  $montoTotal.innerHTML += sessionStorage.getItem(montoTotal)
+  $montoTotal.dataset.montoTotal = $montoTotal.children[1].children[0].innerText
+
+  cambiarEstadoDeLaFactura()
+  sincronizarSelectoresDeLosPlatos()
 }
 
 $publicaciones.addEventListener('click', (event)=>{
@@ -90,37 +102,38 @@ $publicaciones.addEventListener('click', (event)=>{
 
     event.path[1].children[1].innerHTML = numero
 
-    let nombre = event.path[2].children[1].children[0].children[0].innerHTML
-    let precio = parseInt(event.path[2].children[1].children[1].children[1].innerHTML)
-    let cantidad = parseInt(event.path[2].children[2].children[1].innerHTML)
+    let nombre = event.path[2].getElementsByTagName('h4')[0].innerText
+    let precio = parseInt(event.path[2].getElementsByTagName('span')[0].innerText)
+    let cantidad = parseInt(event.path[2].getElementsByTagName('span')[1].innerText)
 
-    // console.log(nombre)
-    // console.log(cantidad)
-    // console.log(precio)
-
-    let platosAdded = Array.from($factura.children[1].getElementsByClassName('nombre-plato'))
-
-    let itemEncontrado = platosAdded.find(item =>{
-      return item.dataset.nombre === nombre
+    const addedDishes = Array.from($listaDeCompra.getElementsByClassName('nombre-plato'))
+    const FOUND_DISH_NAME = addedDishes.find(dish =>{
+      return dish.dataset.nombre === nombre
     })
+    
+    if(FOUND_DISH_NAME){
+      const foundDish = FOUND_DISH_NAME.parentNode
+      const QUANTITY_ITEM_TURNS_ZERO = cantidad === 0
+      const QUANTITY_ITEM_CHANGES = cantidad !== 0 && cantidad > 0
 
-    if(itemEncontrado){
-      if(cantidad === 0){
-        $factura.children[1].removeChild(itemEncontrado.parentNode)
-      }else{
+      if(QUANTITY_ITEM_TURNS_ZERO){
 
-        itemEncontrado.parentNode.children[0].innerHTML = cantidad
-        itemEncontrado.parentNode.children[0].dataset.cantidad = cantidad
+        $listaDeCompra.removeChild(foundDish)
+
+      }else if(QUANTITY_ITEM_CHANGES){
+
+        foundDish.children[0].innerHTML = cantidad
+        foundDish.children[0].dataset.cantidad = cantidad
         
-        itemEncontrado.parentNode.children[2].innerHTML = `<span>$</span><span>${precio * cantidad}</span>`
-        itemEncontrado.parentNode.children[2].dataset.precioporunidad = precio
-        itemEncontrado.parentNode.children[2].dataset.preciototal = precio * cantidad
+        foundDish.children[2].innerHTML = `<span>${precio * cantidad}</span><span>$</span>`
+        foundDish.children[2].dataset.precioporunidad = precio
+        foundDish.children[2].dataset.preciototal = precio * cantidad
       }
     }else{
       addItemFactura(nombre, parseInt(cantidad), parseInt(precio))
     }
 
-    let precios = Array.from($factura.children[1].getElementsByClassName('precio-plato'))
+    const precios = Array.from($listaDeCompra.getElementsByClassName('precio-plato'))
     let precioTotal = 0;
 
     precios.forEach(item =>{
@@ -128,30 +141,28 @@ $publicaciones.addEventListener('click', (event)=>{
     })
 
     //Container con el monto total de la factura
-    $factura.children[2].innerHTML = `<span>Monto Total:</span>
+    $montoTotal.innerHTML = `<span>Monto Total:</span>
                                       <span>
-                                        <span>$</span>
                                         <span>${precioTotal}</span>
+                                        <span>$</span>
                                       </span>`
-    $factura.children[2].dataset.montototal = precioTotal
+                                      
+    $montoTotal.dataset.montototal = precioTotal
 
     if(precioTotal === 0){
-      $factura.children[1].classList.add('d-none') //Container con los items de la factura
-      $factura.children[2].classList.add('d-none') //Container con el monto total de la factura
-      $factura.children[3].classList.remove('d-none') //Imagen de cubiertos
 
-    }else if($factura.children[2].classList.contains('d-none')){
+      cambiarEstadoDeLaFactura()
+
+    }else if($montoTotal.classList.contains('d-none')){
       
-      $factura.children[1].classList.remove('d-none') //Container con los items de la factura
-      $factura.children[2].classList.remove('d-none') //Container con el monto total de la factura
-      $factura.children[3].classList.add('d-none') //Imagen de cubiertos
+      cambiarEstadoDeLaFactura()
     }
   }
 })
 
 $realizarPedido.addEventListener('click', () =>{
 
-  let arreglo = Array.from($factura.children[1].getElementsByClassName('item'))
+  let arreglo = Array.from($listaDeCompra.getElementsByClassName('item'))
 
   if(arreglo.length){
 
@@ -164,28 +175,12 @@ $realizarPedido.addEventListener('click', () =>{
       return objeto
     })
 
-    sessionStorage.setItem(listaDeCompra, $factura.children[1].innerHTML)
-    sessionStorage.setItem(montoTotal, $factura.children[2].innerHTML)
+    sessionStorage.setItem(listaDeCompra, $listaDeCompra.innerHTML)
+    sessionStorage.setItem(montoTotal, $montoTotal.innerHTML)
     sessionStorage.setItem('platosIngresados', JSON.stringify(cantidadDeLosPlatos))
 
     window.location = 'pedido-apunto.html'
   }else{
     alert('no ha elegido ningun producto')
   }
-  // console.log(arreglo)
-  
-  
-
-
-  // let arregloObjetosPlatos = arreglo.map(item => {
-  //   let objeto = {}
-
-  //   objeto['nombre'] = item.children[1].dataset.nombre
-  //   objeto['cantidad'] = item.children[0].dataset.cantidad
-  //   objeto['precio_por_unidad'] = item.children[2].dataset.precioporunidad
-  //   objeto['precio_total'] = item.children[2].dataset.preciototal
-
-  //   return objeto
-  // })
-  // console.log(arregloObjetos)
 })
