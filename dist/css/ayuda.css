@@ -1,0 +1,262 @@
+:root{
+  --border-rounded: 25px;
+}
+section h1, section h2, section h3, section h5{
+  color: var(--PrimarioVino);
+  font-weight: bold;
+}
+section h3{
+  font-size: 1.5em;
+}
+section h4{
+  font-size: 1.2em;
+}
+section h5{
+  font-weight: 500;
+  margin: 0;
+}
+section p{
+  font-weight: normal;
+}
+main{
+  background: var(--background);
+}
+
+.nav-principal.ayuda-menu{
+  grid-template-columns: 120px 1fr;
+}
+.nav-principal.ayuda-menu > .enlaces-nav{
+  justify-content: end;
+}
+@media screen and (min-width: 576px){
+  .nav-principal.ayuda-menu > .enlaces-nav{
+    grid-template-columns: repeat(2, 150px);
+    gap: 20px;
+    font-size: 1.2em;
+  }
+}
+
+#help{
+  text-align: center;
+  display: grid;
+  grid-template-columns: minmax(250px, 1000px);
+  justify-content: center;
+  gap: 20px;
+}
+
+@media screen and (min-width: 768px){
+  #help{
+    margin-top: 80px;
+  }
+}
+#help h1{
+  font-size: 1.7em;
+}
+#help > .help-nav{
+  background-color: #fff;
+  border-radius: var(--border-rounded);
+  display: grid;
+  justify-items: center;
+  grid-template-columns: minmax(auto, 576px);
+}
+@media screen and (min-width: 576px){
+  #help > .help-nav{
+    grid-template-columns: 1fr;
+  }
+}
+#help > .help-nav > .inner-nav{
+  background-color: #e4eef4;
+  display: grid;
+  grid-template-columns: minmax(100px, 350px);
+  gap: 5px;
+  justify-content: center;
+  justify-items: center;
+}
+@media screen and (min-width: 576px){
+  #help > .help-nav > .inner-nav{
+    padding: 0;
+    grid-template-columns: repeat(3, minmax(100px, 250px));
+  }
+}
+@media screen and (min-width: 768px){
+  #help > .help-nav > .inner-nav{
+    grid-template-columns: repeat(5, minmax(100px, 250px));
+  }
+}
+#help > .help-nav > .inner-nav > .item{
+  position: relative;
+  cursor: pointer;
+}
+#help > .help-nav > .inner-nav > .item::after{
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  cursor: pointer;
+}
+#help > .help-nav > .inner-nav img{
+  padding: 10px;
+  width: 100%;
+  /* max-width: 200px; */
+}
+#help > .help-nav > .inner-nav .item{
+  padding: 15px 0;
+  width: 100%;
+  background-color: #fff;
+}
+@media screen and (min-width: 576px){
+  #help > .help-nav > .inner-nav .item{
+    padding: 0;
+  }
+}
+#help > .help-nav > .inner-nav .item.active{
+  padding-right: 5px;
+  padding-left: 5px;
+}
+#help > .help-nav > .inner-nav .item.active > .item-container{
+  background-color: var(--SecundarioAmarillo);
+  border: 5px solid var(--SecundarioNaranjaClaro);
+  border-radius: 10px;
+}
+#help > [data-type="FAQ"]{
+  text-align: justify;
+}
+#help > [data-type="FAQ"] p{ 
+  margin: 20px;
+}
+#help > .help-container{
+  background-color: #fff;
+  border-radius: var(--border-rounded);
+}
+#help > .help-container p,
+#help > .help-container ul li{
+  font-size: 19.2px;
+}
+#help > .help-container p{
+  margin-bottom: 20px;
+}
+#help > [data-type="Comentarios"]{
+  text-align: justify;
+}
+#help > [data-type="Comentarios"] h3{
+  text-align: center;
+}
+#help > [data-type="Comentarios"] > ul > li{
+  margin-bottom: 20px;
+  margin-left: 20px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+#help > [data-type="Comentarios"] > ul > li:before{
+  content: "";
+  justify-self: center;
+  margin-top: 10px;
+  margin-right: 10px;
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  /* border-radius: 50%; */
+  background-color: var(--PrimarioVino);
+}
+#help > [data-type="Comentarios"] > ul > li > p{
+  display: inline-block;
+}
+
+#socios-cards{
+  text-align: center;
+  display: grid;
+  grid-template-columns: minmax(250px, 1200px);
+  justify-content: center;
+  gap: 20px;
+}
+
+@media screen and (min-width: 768px){
+  #socios-cards{
+    margin-top: 80px;
+  }
+}
+#socios-cards h1{
+
+  font-size: 1.5em;
+}
+#socios-cards h5{
+  font-size: 1.7em;
+}
+#socios-cards > #socios-cards-carousel .carousel-control-prev,
+#socios-cards > #socios-cards-carousel .carousel-control-next{
+  font-size: 2em;
+  color: var(--sombra);
+}
+#socios-cards > #socios-cards-carousel > .carousel-inner{
+  display: grid;
+  grid-template-columns: minmax(250px, 1000px);
+  justify-content: center;
+}
+#socios-cards > #socios-cards-carousel > .carousel-inner > .carousel-item{
+  display: block;
+  position: absolute;
+  visibility: hidden;
+}
+#socios-cards > #socios-cards-carousel > .carousel-inner > .carousel-item.active{
+  /* display: unset; */
+  visibility: unset;
+  position: unset;
+}
+#socios-cards > #socios-cards-carousel > .carousel-inner > .carousel-item > .socios-container{
+  display: grid;
+  grid-template-columns: minmax(100px, 350px);
+  gap: 20px;
+  justify-content: center;
+  justify-items: center;
+}
+@media screen and (min-width: 576px){
+  #socios-cards > #socios-cards-carousel > .carousel-inner > .carousel-item > .socios-container{
+    grid-template-columns: repeat(4, minmax(100px, calc(350px / 2)));
+  }
+}
+@media screen and (min-width: 768px){
+  #socios-cards > #socios-cards-carousel > .carousel-inner > .carousel-item > .socios-container{
+    grid-template-columns: repeat(6, minmax(100px, calc(350px / 2)));
+    gap: 30px;
+  }
+}
+#socios-cards > #socios-cards-carousel > .carousel-inner > .carousel-item > .socios-container > .info-card{
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 15px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+@media screen and (min-width: 576px){
+  #socios-cards > #socios-cards-carousel > .carousel-inner > .carousel-item > .socios-container > .info-card{
+    grid-column: 2 span;
+  }
+}
+@media screen and (min-width: 576px){
+  #socios-cards > #socios-cards-carousel > .carousel-inner > .carousel-item > .socios-container > .info-card:nth-of-type(3){
+    grid-column: 2 / 4;
+  }
+}
+@media screen and (min-width: 768px){
+  #socios-cards > #socios-cards-carousel > .carousel-inner > .carousel-item > .socios-container > .info-card:nth-of-type(3){
+    grid-column: 2 span;
+  }
+}
+#socios-cards > #socios-cards-carousel > .carousel-inner > .carousel-item > .socios-container > .info-card img{
+  padding: 10px 70px;
+  width: 100%;
+  /* max-width: 200px; */
+}
+@media screen and (min-width: 768px){
+  #socios-cards > #socios-cards-carousel > .carousel-inner > .carousel-item > .socios-container > .info-card img{
+    padding: 10px 50px;
+  }
+}
+@media screen and (min-width: 992px){
+  #socios-cards > #socios-cards-carousel > .carousel-inner > .carousel-item > .socios-container > .info-card img{
+    padding: 10px 70px;
+  }
+}

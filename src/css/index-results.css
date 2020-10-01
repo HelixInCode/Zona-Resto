@@ -20,7 +20,7 @@
       text-align: center;
     }
   
-    --addressPrice: {
+    --addressPrice:{
       padding: 5px 10px;
       position: absolute;
       border-radius: 3px;
@@ -69,7 +69,7 @@
 }
 
 .nav-principal{
-    z-index: 1000; 
+    z-index: 9999; 
     top: 0;
     right: 0;
     left: 0;
@@ -496,17 +496,4 @@ background-color: var(--sombra);
     font-weight: 400;
     color: #fff;
     border-radius: 10px;
-}
-
-@media screen and (min-width: 768px){
-    
-}
-@media screen and (min-width: 768px){
-    
-}
-@media screen and (min-width: 768px){
-    
-}
-@media screen and (min-width: 768px){
-    
 }
