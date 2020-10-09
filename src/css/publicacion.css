@@ -1,3 +1,13 @@
+@media screen and (min-width: 576px){
+  /* Wider than 576px */ 
+}
+@media screen and (min-width: 768px){
+  /* Wider than 768px */ 
+}
+@media screen and (min-width: 992px){
+  /* Wider than 992px */ 
+}
+
 :root{
   --imgCover:{
     position: absolute;
@@ -70,7 +80,7 @@
   display: grid;
   justify-content: center;
   align-content: center;
-  background-image: url(../../dist/img/marco.png);
+  /* background-image: url(./../../dist/img/marco.png); */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

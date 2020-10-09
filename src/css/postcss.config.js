@@ -1,5 +1,6 @@
 module.exports = {
   plugins: [
+    require('postcss-import'),
     require('postcss-cssnext')({
       features: {
         autoprefixer: {
@@ -9,6 +10,8 @@ module.exports = {
         customProperties: false,
         calc: false,
       }
-    })
+    }),
+    require('css-mqpacker'),
+    // require('cssnano')
   ]
 }

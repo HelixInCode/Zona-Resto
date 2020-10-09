@@ -136,8 +136,8 @@ main{
   text-align: center;
 }
 #help > [data-type="Comentarios"] > ul > li{
-  margin-bottom: 20px;
-  margin-left: 20px;
+  margin: 20px;
+  margin-left: 10px;
   display: grid;
   grid-template-columns: auto 1fr;
 }

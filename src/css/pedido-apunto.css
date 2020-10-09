@@ -25,6 +25,14 @@
     font-size: 1.5em;
   }
 }
+
+@media screen and (min-width: 576px) {
+  /* Wider than 576px */ 
+}
+@media screen and (min-width: 768px) {
+  /* Wider than 768px */ 
+}
+
 #factura{
   display: grid;
   grid-template-columns: minmax(100px, 600px);
@@ -60,7 +68,7 @@
   display: grid;
   justify-content: center;
   align-content: center;
-  background-image: url(../../dist/img/marco.png);
+  /* background-image: url(../../dist/img/marco.png); */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

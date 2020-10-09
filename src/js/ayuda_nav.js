@@ -5,12 +5,12 @@ $items = Array.from($items)
 $navAyuda.addEventListener('click', (event)=>{
   if(event.target.classList.contains('item')){
 
-    arregloNav = Array.from($navAyuda.children)
+    const arregloNav = Array.from($navAyuda.children)
     arregloNav.forEach(button => {
       button.classList.remove('active')
     })
     event.target.classList.add('active')
-  
+      
     const toggleSections = ($items, nombre) =>{
       $items.forEach(item => {
         item.classList.add('d-none')

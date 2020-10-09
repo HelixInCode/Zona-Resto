@@ -65,6 +65,27 @@
     transition: .3s;
   }
 }
+@media screen and (min-height: 555px) {
+  /* Wider than 555px */ 
+}
+@media screen and (min-width: 576px) {
+  /* Wider than 576px */ 
+}
+@media screen and (min-width: 768px) {
+  /* Wider than 768px */ 
+}
+@media screen and (min-width: 992px) {
+  /* Wider than 992px */ 
+}
+@media screen and (min-width: 1010px) {
+  /* Wider than 1010px */ 
+}
+@media screen and (min-width: 1060px) {
+  /* Wider than 1060px */ 
+}
+@media screen and (min-width: 1200px) {
+  /* Wider than 1200px */ 
+}
 
 *, p, ul, a, label, button{
   margin: 0;
@@ -276,7 +297,7 @@ section p{
   position: relative;
   z-index: 6;
 
-  @media (--limited-height){
+  @media screen and (min-height: 555px){
     height: 100vh;
   }
 }
@@ -678,4 +699,3 @@ main{
   justify-self: end;
   color: green;
 }
-@custom-media --limited-height screen and (height >= 555px);
