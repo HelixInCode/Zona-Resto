@@ -4,6 +4,6 @@ import '../../css/index-results.css';
 import '../../css/ayuda.css';
 
 // JS code imported 
-import '../renderFooter';
+import '../renderFooter.js';
 import '../hideShowModals.js';
 import '../ayuda_nav.js';

@@ -68,7 +68,7 @@
   display: grid;
   justify-content: center;
   align-content: center;
-  /* background-image: url(../../dist/img/marco.png); */
+  background-image: url(../../dist/img/marco.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

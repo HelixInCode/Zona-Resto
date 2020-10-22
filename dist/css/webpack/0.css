@@ -627,6 +627,7 @@ main{
     top: calc(50% - 58px)
   } 
 }
+
 :root{
     --PrimarioNaranja: #d93611;
     --PrimarioVino: #410c3a;

@@ -1,0 +1,322 @@
+
+:root{
+  --border-rounded: 25px;
+  --font-size: 16px;
+}
+section h1, section h2, section h3, section h4, section h5, section h6{
+  color: var(--PrimarioVino);
+  font-weight: bold; 
+  text-align: center;
+}
+section h3{
+  font-size: 1.5em;
+}
+section h4{
+  font-size: 1.2em;
+}
+section h5{
+  font-weight: 500;
+  margin: 0;
+}
+section p{ 
+  font-weight: normal;
+}
+main{
+  background: var(--background);
+}
+.nav-principal.ayuda-menu{
+  grid-template-columns: 120px 1fr;
+}
+.nav-principal.ayuda-menu > .enlaces-nav{
+  justify-content: end;
+}
+#panel-socios{
+  display: grid;
+  grid-template-columns: minmax(250px, 1000px);
+  justify-content: center;
+  gap: 20px;
+}
+#panel-socios h1{
+  font-size: 1.7em;
+}
+#panel-socios > .help-nav{
+  background-color: #fff;
+  justify-self: center;
+  border-radius: var(--border-rounded);
+  display: grid;
+  justify-items: center;
+}
+#panel-socios > .help-nav > .inner-nav{
+  background-color: #e4eef4;
+  display: grid;
+  /* grid-template-columns: minmax(100px, 350px); */
+  grid-template-columns: repeat(3, minmax(50px, 250px));
+  gap: 5px;
+  justify-content: center;
+  justify-items: center;
+}
+#panel-socios > .help-nav > .inner-nav > .item{
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+  background-color: #fff;
+}
+#panel-socios > .help-nav > .inner-nav > .item::after{
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  cursor: pointer;
+}
+#panel-socios > .help-nav > .inner-nav .item.active{
+  padding-right: 5px;
+  padding-left: 5px;
+}
+#panel-socios > .help-nav > .inner-nav .item.active > .item-container{
+  background-color: var(--SecundarioAmarillo);
+  border: 5px solid var(--SecundarioNaranjaClaro);
+  border-radius: 10px;
+}
+#panel-socios > .help-nav > .inner-nav img{
+  padding: 10px 0;
+  width: 100%;
+}
+#panel-socios > .help-nav > .inner-nav img{
+  /* max-width: 200px; */
+}
+#panel-socios > .help-nav > .inner-nav .item > .item-container h5{
+  font-size: 14px;
+}
+#panel-socios > .panel-socios-container{
+  background-color: #fff;
+  border-radius: var(--border-rounded);
+}
+#panel-socios > .panel-socios-container p,
+#panel-socios > .panel-socios-container ul li{
+  font-size: var(--font-size);
+}
+#panel-socios > .panel-socios-container p{
+  margin-bottom: 20px;
+}
+#panel-socios > .panel-socios-container ul{
+  padding: 0;
+}
+#panel-socios > [data-type="Datos"]{
+  display: grid;
+  grid-template-columns: minmax(200px, 1fr);
+  -webkit-column-gap: 10px;
+     -moz-column-gap: 10px;
+          column-gap: 10px;
+  row-gap: 20px;
+}
+#panel-socios > [data-type="Datos"] > ul{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(8, auto);
+  align-items: center;
+  gap: 10px;
+  grid-column: 2 span;
+}
+#panel-socios > [data-type="Datos"] > ul > li{
+  display: grid;
+}
+#panel-socios > [data-type="Datos"] > .user-picture{
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 10px;
+  justify-items: center;
+  grid-row: 1 / 2; 
+}
+#panel-socios > [data-type="Datos"] > .user-features > li{
+  font-weight: 500;
+  color: var(--PrimarioVinoClaro) 
+}
+#panel-socios > [data-type="Datos"] > .user-features > li > span{
+  color: var(--PrimarioVino);
+}
+#panel-socios > [data-type="Datos"] > .user-picture > button{
+  max-height: 34px;
+  padding: 5px 10px;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  background-color: var(--PrimarioNaranja);
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+#panel-socios > [data-type="Datos"] > .user-picture > button:hover{
+  background-color: rgb(255, 61, 18);
+}
+#panel-socios > [data-type="Resto"],
+#panel-socios > [data-type="Finanzas"]{
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+#panel-socios > [data-type="Resto"] > h4,
+#panel-socios > [data-type="Finanzas"] > h4{
+  font-size: var(--font-size)
+}
+#panel-socios > [data-type="Resto"] button,
+#panel-socios > [data-type="Finanzas"] button{
+  max-height: 34px;
+  padding: 5px 10px;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  background-color: var(--PrimarioNaranja);
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+#panel-socios > [data-type="Resto"] button:hover,#panel-socios > [data-type="Finanzas"] button:hover{
+  background-color: rgb(255, 61, 18);
+}
+#panel-socios > [data-type="Resto"] button,
+#panel-socios > [data-type="Finanzas"] button{
+  padding: 5px 20px;
+}
+#panel-socios > [data-type="Resto"] > .resto-container,
+#panel-socios > [data-type="Finanzas"] > .resto-container{
+  width: 100%;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: var(--PrimarioVino);
+}
+#panel-socios > [data-type="Resto"] > .resto-container > .info,
+#panel-socios > [data-type="Finanzas"] > .resto-container > .info{
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  border-radius: 10px;
+}
+#panel-socios > [data-type="Resto"] > .resto-container > .info > img,
+#panel-socios > [data-type="Finanzas"] > .resto-container > .info > img{
+  max-height: 150px;
+  justify-self: center;
+}
+#panel-socios > [data-type="Resto"] > .resto-container > .info > .resto-descripcion,
+#panel-socios > [data-type="Finanzas"] > .resto-container > .info > .resto-descripcion{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 1fr
+}
+#panel-socios > [data-type="Resto"] > .resto-container > .info > .resto-descripcion > h5,#panel-socios > [data-type="Finanzas"] > .resto-container > .info > .resto-descripcion > h5{
+  text-align: left;
+  font-size: var(--font-size);
+}
+#panel-socios > [data-type="Resto"] > .resto-container > .info > .resto-descripcion span,#panel-socios > [data-type="Finanzas"] > .resto-container > .info > .resto-descripcion span{
+  align-self: flex-end;
+}
+#panel-socios > [data-type="Resto"] > .resto-container > .info > .resto-descripcion span > span,#panel-socios > [data-type="Finanzas"] > .resto-container > .info > .resto-descripcion span > span{
+  font-weight: 500;
+  color: var(--PrimarioVino);
+  font-size: var(--font-size);
+}
+#panel-socios > [data-type="Resto"] > .resto-container > .info > .resto-descripcion div,#panel-socios > [data-type="Finanzas"] > .resto-container > .info > .resto-descripcion div{
+  align-self: flex-end;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+#panel-socios > [data-type="Resto"] > .resto-container > .info > .buttons-container{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  justify-content: center;
+  align-content: center;
+}
+#panel-socios > [data-type="Finanzas"] > .resto-container > .info > .time-left{
+  align-self: flex-end;
+  text-align: center
+}
+#panel-socios > [data-type="Finanzas"] > .resto-container > .info > .time-left span{
+  font-weight: 500;
+  font-size: var(--font-size);
+  color: var(--PrimarioVino);
+  text-align: left;
+}
+@media screen and (min-width: 630px){
+  /* Wider than 576px */
+  #panel-socios > .help-nav{
+    grid-template-columns: 580px;
+  }
+  #panel-socios > .help-nav > .inner-nav{
+    padding: 0;
+    /* grid-template-columns: repeat(3, minmax(100px, 250px)); */
+  }
+  #panel-socios > .help-nav > .inner-nav > .item{
+    padding: 0;
+  }
+  #panel-socios > .help-nav > .inner-nav img{
+    padding: 10px;
+  }
+  #panel-socios > .help-nav > .inner-nav .item > .item-container h5{
+    font-size: unset;
+  } 
+}
+@media screen and (min-width: 576px){
+  /* Wider than 576px */
+  .nav-principal.ayuda-menu > .enlaces-nav{
+    grid-template-columns: repeat(2, 150px);
+    gap: 20px;
+    font-size: 1.2em;
+  }
+  #panel-socios > [data-type="Datos"] > ul > li{
+    gap: 10px;
+    grid-template-columns: 1fr 1fr;
+  }
+  #panel-socios > [data-type="Resto"] > .resto-container > .info,
+#panel-socios > [data-type="Finanzas"] > .resto-container > .info{
+    grid-template-columns: repeat(2, 1fr) repeat(2, auto);
+  }
+  #panel-socios > [data-type="Resto"] > .resto-container > .info > img,
+#panel-socios > [data-type="Finanzas"] > .resto-container > .info > img{
+    grid-row: 1 / 2;
+    grid-column: 1 / 5;
+  }
+  #panel-socios > [data-type="Resto"] > .resto-container > .info > .resto-descripcion,
+#panel-socios > [data-type="Finanzas"] > .resto-container > .info > .resto-descripcion{
+    grid-column: 2 span;
+  }
+  #panel-socios > [data-type="Resto"] > .resto-container > .info > div,
+#panel-socios > [data-type="Finanzas"] > .resto-container > .info > div{
+    grid-column: 2 span;
+  } 
+}
+@media screen and (min-width: 768px){
+  /* Wider than 768px */
+  :root{
+    --font-size: 19.2px;
+  }
+  #panel-socios{
+    margin-top: 80px;
+  }
+  #panel-socios > [data-type="Datos"]{
+    grid-template-columns: 1fr auto;
+  }
+  #panel-socios > [data-type="Datos"] > ul{
+    grid-column: 1 span;
+  }
+  #panel-socios > [data-type="Datos"] > .user-picture{
+    grid-row: unset;
+  }
+  #panel-socios > [data-type="Resto"] > .resto-container > .info,
+#panel-socios > [data-type="Finanzas"] > .resto-container > .info{
+    grid-template-columns: auto 1fr auto;
+  }
+  #panel-socios > [data-type="Resto"] > .resto-container > .info > img,
+#panel-socios > [data-type="Finanzas"] > .resto-container > .info > img{
+    grid-row: unset;
+    grid-column: unset;
+  }
+  #panel-socios > [data-type="Resto"] > .resto-container > .info > .resto-descripcion,
+#panel-socios > [data-type="Finanzas"] > .resto-container > .info > .resto-descripcion{
+    grid-column: unset;
+  }
+  #panel-socios > [data-type="Resto"] > .resto-container > .info > div,
+#panel-socios > [data-type="Finanzas"] > .resto-container > .info > div{
+    grid-column: unset;
+  } 
+}

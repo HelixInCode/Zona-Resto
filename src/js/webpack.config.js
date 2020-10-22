@@ -1,5 +1,6 @@
 const path = require('path')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const webpack = require('webpack')
 
 module.exports = {
   entry: {
@@ -8,6 +9,8 @@ module.exports = {
     publicacion: path.resolve(__dirname, 'entryPoints JS/publicacion.js'),
     pedido_apunto: path.resolve(__dirname, 'entryPoints JS/pedido_apunto.js'),
     ayuda: path.resolve(__dirname, 'entryPoints JS/ayuda.js'),
+    ayuda_socios: path.resolve(__dirname, 'entryPoints JS/ayuda_socios.js'),
+    panel_socios: path.resolve(__dirname, 'entryPoints JS/panel_socios.js')
   },
   output: {
     path: path.resolve(__dirname, '../../dist/js/webpack'),
@@ -20,7 +23,7 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['es2015']
+            presets: ['@babel/preset-env']
           }
         }
       },
@@ -37,25 +40,30 @@ module.exports = {
       
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          // use: ['style-loader', 'css-loader']
-          // use: 'css-loader'
-          use: [
-            {
-              loader: 'css-loader',
-              options:{
-                modules: false,
-                importLoaders: 1
-              }
-            },
-            'postcss-loader'
-          ]
-        })
+        use:[
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options:{
+              importLoaders: 1,
+            }
+          },
+          'postcss-loader'
+        ]
       }
     ]
       
   },
+  optimization: {
+    splitChunks: {
+      // include all types of chunks
+      chunks: 'all',
+      name: 'common'
+    }
+  },
   plugins: [
-    new ExtractTextPlugin('../../css/webpack/[name].css')
+    new MiniCssExtractPlugin({
+      filename: '../../css/webpack/[name].css'
+    }),
   ]
 }

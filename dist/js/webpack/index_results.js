@@ -1,6 +1,66 @@
 /******/ (function(modules) { // webpackBootstrap
+/******/ 	// install a JSONP callback for chunk loading
+/******/ 	function webpackJsonpCallback(data) {
+/******/ 		var chunkIds = data[0];
+/******/ 		var moreModules = data[1];
+/******/ 		var executeModules = data[2];
+/******/
+/******/ 		// add "moreModules" to the modules object,
+/******/ 		// then flag all "chunkIds" as loaded and fire callback
+/******/ 		var moduleId, chunkId, i = 0, resolves = [];
+/******/ 		for(;i < chunkIds.length; i++) {
+/******/ 			chunkId = chunkIds[i];
+/******/ 			if(Object.prototype.hasOwnProperty.call(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 				resolves.push(installedChunks[chunkId][0]);
+/******/ 			}
+/******/ 			installedChunks[chunkId] = 0;
+/******/ 		}
+/******/ 		for(moduleId in moreModules) {
+/******/ 			if(Object.prototype.hasOwnProperty.call(moreModules, moduleId)) {
+/******/ 				modules[moduleId] = moreModules[moduleId];
+/******/ 			}
+/******/ 		}
+/******/ 		if(parentJsonpFunction) parentJsonpFunction(data);
+/******/
+/******/ 		while(resolves.length) {
+/******/ 			resolves.shift()();
+/******/ 		}
+/******/
+/******/ 		// add entry modules from loaded chunk to deferred list
+/******/ 		deferredModules.push.apply(deferredModules, executeModules || []);
+/******/
+/******/ 		// run deferred modules when all chunks ready
+/******/ 		return checkDeferredModules();
+/******/ 	};
+/******/ 	function checkDeferredModules() {
+/******/ 		var result;
+/******/ 		for(var i = 0; i < deferredModules.length; i++) {
+/******/ 			var deferredModule = deferredModules[i];
+/******/ 			var fulfilled = true;
+/******/ 			for(var j = 1; j < deferredModule.length; j++) {
+/******/ 				var depId = deferredModule[j];
+/******/ 				if(installedChunks[depId] !== 0) fulfilled = false;
+/******/ 			}
+/******/ 			if(fulfilled) {
+/******/ 				deferredModules.splice(i--, 1);
+/******/ 				result = __webpack_require__(__webpack_require__.s = deferredModule[0]);
+/******/ 			}
+/******/ 		}
+/******/
+/******/ 		return result;
+/******/ 	}
+/******/
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
+/******/
+/******/ 	// object to store loaded and loading chunks
+/******/ 	// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 	// Promise = chunk loading, 0 = chunk loaded
+/******/ 	var installedChunks = {
+/******/ 		"index_results": 0
+/******/ 	};
+/******/
+/******/ 	var deferredModules = [];
 /******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
@@ -36,12 +96,32 @@
 /******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
 /******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, {
-/******/ 				configurable: false,
-/******/ 				enumerable: true,
-/******/ 				get: getter
-/******/ 			});
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
 /******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
 /******/ 	};
 /******/
 /******/ 	// getDefaultExport function for compatibility with non-harmony modules
@@ -59,162 +139,32 @@
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "";
 /******/
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	var jsonpArray = window["webpackJsonp"] = window["webpackJsonp"] || [];
+/******/ 	var oldJsonpFunction = jsonpArray.push.bind(jsonpArray);
+/******/ 	jsonpArray.push = webpackJsonpCallback;
+/******/ 	jsonpArray = jsonpArray.slice();
+/******/ 	for(var i = 0; i < jsonpArray.length; i++) webpackJsonpCallback(jsonpArray[i]);
+/******/ 	var parentJsonpFunction = oldJsonpFunction;
+/******/
+/******/
+/******/ 	// add entry module to deferred list
+/******/ 	deferredModules.push(["./src/js/entryPoints JS/index_results.js","common"]);
+/******/ 	// run deferred modules when ready
+/******/ 	return checkDeferredModules();
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
-/***/ (function(module, exports) {
+/******/ ({
 
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var $footer = document.getElementsByTagName('footer')[0];
-var footerTemplate = function footerTemplate() {
-  return '<div class="footer-container pt-4 pt-sm-0">\n      \n            <div class="footer-links py-0 p-sm-4">\n              <ul>\n                <li>\n                  <a href="#?">Nosotros</a>\n                </li>\n                <li>\n                  <a href="#?">Contacto</a>\n                </li>\n                <li>\n                  <a href="#?">Quiero ser Parte de la Zona</a>\n                </li>\n                <li>\n                  <a href="#?">Preguntas Frecuentes</a>\n                </li>\n              </ul>\n            </div>\n\n            <hr class="d-sm-none">\n            \n            <div class="footer-social-links py-0 py-sm-4">\n              <h6>Segu\xEDnos en nuestras</h6>\n              <ul>\n                <li>\n                  <a href="#?">\n                    <i class="fab fa-facebook-square"></i>\n                  </a>\n                </li>\n                <li>\n                  <a href="#?">\n                    <i class="fab fa-instagram"></i>\n                  </a>\n                </li>\n              </ul>\n            </div>\n\n            <hr class="d-sm-none">\n            \n            <div class="footer-phrase py-0 py-sm-4">\n              <h5>"Lorem ipsum dolor sit amet."</h5>\n            </div>\n\n            <div class="footer-img">\n              <img class="py-3" src="dist/img/zonaResto Blanco.png" alt="">\n              <img src="dist/img/footer2-2.png" alt="">\n            </div>\n\n          </div>\n\n          <div class="footer-bottom">\n            \xA9 2020 Copyright:\n            <a href="#"> zonaresto.com</a>\n          </div>';
-};
-$footer.innerHTML = footerTemplate();
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ "./src/js/entryPoints JS/index_results.js":
+/*!************************************************!*\
+  !*** ./src/js/entryPoints JS/index_results.js ***!
+  \************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-var showHideModal = function showHideModal($btn, $modal) {
-  $btn.addEventListener('click', function () {
-
-    $modal.classList.toggle('hide');
-  });
-};
-
-if (document.getElementById('modal-login')) {
-  var $login = document.getElementById('modal-login');
-  var $btnHideLogin = document.getElementById('close-login');
-  var $btnShowLogin = document.getElementById('ingresar');
-
-  showHideModal($btnHideLogin, $login);
-  showHideModal($btnShowLogin, $login);
-}
-
-if (document.getElementById('modal-message-sent')) {
-  var $messageSent = document.getElementById('modal-message-sent');
-  var $btnHideSent = document.getElementById('close-sent');
-
-  showHideModal($btnHideSent, $messageSent);
-}
-
-if (document.getElementById('modal-input-img')) {
-  var $input = document.getElementById('modal-input-img');
-  var $btnHideInput = document.getElementById('close-input');
-  var $btnShowInput = document.getElementById('show-input');
-
-  showHideModal($btnHideInput, $input);
-  showHideModal($btnShowInput, $input);
-}
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-// Main Menu Elements
-var $hamburger = document.getElementById('hamburger');
-var $times = document.getElementById('times');
-var $menuOverlay = document.getElementsByClassName('menu-overlay')[0];
-var $menuItems = document.getElementsByClassName('menu-items')[0];
-// Menu User Panel
-// const $user = document.getElementsByClassName('user')[0]
-// const $userPanel = $user.getElementsByTagName('ul')[0]
-// const $userArrow = $user.getElementsByClassName('fa-angle-down')[0]
-
-var Menu = function Menu(displayButton, menuList, optionalElement, class1, class2) {
-  _classCallCheck(this, Menu);
-
-  this.boton = displayButton;
-  this.menu = menuList;
-  this.option = optionalElement;
-  this.clase1 = class1;
-  this.clase2 = class2;
-};
-
-var displayMenu = function displayMenu(menuType) {
-  menuType.boton.addEventListener('click', function () {
-    menuType.menu.classList.toggle(menuType.clase1);
-    menuType.option.classList.toggle(menuType.clase2);
-  });
-};
-// document.addEventListener('DOMContentLoaded', (event) =>{
-
-//   if($userPanel.children[0].children[0].innerText === ""){
-//     //Hay sesión iniciada
-//     $user.classList.toggle('d-none')
-
-//   }else{
-//     //No hay sesión iniciada
-//     $menuItems.classList.toggle('four-buttons')
-//     $menuItems.children[3].classList.toggle('d-none')
-//   }
-// })
-
-var menuHamburger = new Menu($hamburger, $menuItems, $menuOverlay, 'hide', 'hide');
-var menuOverlay = new Menu($menuOverlay, $menuItems, $menuOverlay, 'hide', 'hide');
-// const menuUser = new Menu($user, $userPanel, $userArrow, 'hide', 'rotate')
-
-// const menu = [menuHamburger, menuOverlay, menuUser]
-var menu = [menuHamburger, menuOverlay];
-
-menu.forEach(function (menuType) {
-  return displayMenu(menuType);
-});
-
-if ($times) {
-  $hamburger.addEventListener('click', function () {
-    $hamburger.getElementsByTagName('i')[0].classList.toggle('d-none');
-    $hamburger.getElementsByTagName('i')[1].classList.toggle('d-none');
-  });
-  $menuOverlay.addEventListener('click', function () {
-    $hamburger.getElementsByTagName('i')[0].classList.toggle('d-none');
-    $hamburger.getElementsByTagName('i')[1].classList.toggle('d-none');
-  });
-}
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 5 */,
-/* 6 */,
-/* 7 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-__webpack_require__(0);
-
-__webpack_require__(4);
-
-__webpack_require__(1);
-
-__webpack_require__(2);
-
-__webpack_require__(3);
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../css/style.css */ \"./src/css/style.css\");\n/* harmony import */ var _css_index_results_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../css/index-results.css */ \"./src/css/index-results.css\");\n/* harmony import */ var _renderFooter_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../renderFooter.js */ \"./src/js/renderFooter.js\");\n/* harmony import */ var _renderFooter_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_renderFooter_js__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _hideShowModals_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../hideShowModals.js */ \"./src/js/hideShowModals.js\");\n/* harmony import */ var _hideShowModals_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_hideShowModals_js__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _hamburger_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../hamburger.js */ \"./src/js/hamburger.js\");\n/* harmony import */ var _hamburger_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_hamburger_js__WEBPACK_IMPORTED_MODULE_4__);\n// CSS code imported \n\n // JS code imported \n\n\n\n\n\n//# sourceURL=webpack:///./src/js/entryPoints_JS/index_results.js?");
 
 /***/ })
-/******/ ]);
+
+/******/ });

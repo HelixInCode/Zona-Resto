@@ -57,7 +57,7 @@
 /******/ 	// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 	// Promise = chunk loading, 0 = chunk loaded
 /******/ 	var installedChunks = {
-/******/ 		"ayuda": 0
+/******/ 		"ayuda_socios": 0
 /******/ 	};
 /******/
 /******/ 	var deferredModules = [];
@@ -148,33 +148,22 @@
 /******/
 /******/
 /******/ 	// add entry module to deferred list
-/******/ 	deferredModules.push(["./src/js/entryPoints JS/ayuda.js","common"]);
+/******/ 	deferredModules.push(["./src/js/entryPoints JS/ayuda_socios.js","common"]);
 /******/ 	// run deferred modules when ready
 /******/ 	return checkDeferredModules();
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/js/ayuda_nav.js":
-/*!*****************************!*\
-  !*** ./src/js/ayuda_nav.js ***!
-  \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("var $navAyuda = document.getElementsByClassName('inner-nav')[0];\nvar $items = document.getElementsByClassName('help-container');\n$items = Array.from($items);\n$navAyuda.addEventListener('click', function (event) {\n  if (event.target.classList.contains('item')) {\n    var arregloNav = Array.from($navAyuda.children);\n    arregloNav.forEach(function (button) {\n      button.classList.remove('active');\n    });\n    event.target.classList.add('active');\n\n    var toggleSections = function toggleSections($items, nombre) {\n      $items.forEach(function (item) {\n        item.classList.add('d-none');\n\n        if (item.dataset.type === nombre) {\n          item.classList.remove('d-none');\n        }\n      });\n    };\n\n    switch (event.target.dataset.type) {\n      case \"Nosotros\":\n        toggleSections($items, \"Nosotros\");\n        break;\n\n      case \"FAQ\":\n        toggleSections($items, \"FAQ\");\n        break;\n\n      case \"Comentarios\":\n        toggleSections($items, \"Comentarios\");\n        break;\n\n      case \"Privacidad\":\n        toggleSections($items, \"Privacidad\");\n        break;\n\n      case \"Condiciones\":\n        toggleSections($items, \"Condiciones\");\n        break;\n\n      default:\n        break;\n    }\n  }\n});\n\n//# sourceURL=webpack:///./src/js/ayuda_nav.js?");
-
-/***/ }),
-
-/***/ "./src/js/entryPoints JS/ayuda.js":
-/*!****************************************!*\
-  !*** ./src/js/entryPoints JS/ayuda.js ***!
-  \****************************************/
+/***/ "./src/js/entryPoints JS/ayuda_socios.js":
+/*!***********************************************!*\
+  !*** ./src/js/entryPoints JS/ayuda_socios.js ***!
+  \***********************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../css/style.css */ \"./src/css/style.css\");\n/* harmony import */ var _css_index_results_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../css/index-results.css */ \"./src/css/index-results.css\");\n/* harmony import */ var _css_ayuda_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../css/ayuda.css */ \"./src/css/ayuda.css\");\n/* harmony import */ var _renderFooter_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../renderFooter.js */ \"./src/js/renderFooter.js\");\n/* harmony import */ var _renderFooter_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_renderFooter_js__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _hideShowModals_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../hideShowModals.js */ \"./src/js/hideShowModals.js\");\n/* harmony import */ var _hideShowModals_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_hideShowModals_js__WEBPACK_IMPORTED_MODULE_4__);\n/* harmony import */ var _ayuda_nav_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../ayuda_nav.js */ \"./src/js/ayuda_nav.js\");\n/* harmony import */ var _ayuda_nav_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_ayuda_nav_js__WEBPACK_IMPORTED_MODULE_5__);\n// CSS code imported \n\n\n // JS code imported \n\n\n\n\n\n//# sourceURL=webpack:///./src/js/entryPoints_JS/ayuda.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../css/style.css */ \"./src/css/style.css\");\n/* harmony import */ var _css_index_results_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../css/index-results.css */ \"./src/css/index-results.css\");\n/* harmony import */ var _css_ayuda_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../css/ayuda.css */ \"./src/css/ayuda.css\");\n/* harmony import */ var _renderFooter_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../renderFooter.js */ \"./src/js/renderFooter.js\");\n/* harmony import */ var _renderFooter_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_renderFooter_js__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _hideShowModals_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../hideShowModals.js */ \"./src/js/hideShowModals.js\");\n/* harmony import */ var _hideShowModals_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_hideShowModals_js__WEBPACK_IMPORTED_MODULE_4__);\n// CSS code imported \n\n\n // JS code imported \n\n\n\n\n//# sourceURL=webpack:///./src/js/entryPoints_JS/ayuda_socios.js?");
 
 /***/ })
 
