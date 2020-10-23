@@ -320,7 +320,6 @@ main{
   align-content: center;
 }
 #panel-socios > [data-type="Finanzas"] > .resto-container > .info > .time-left{
-  align-self: flex-end;
   text-align: center;
 
   & span{
@@ -329,4 +328,20 @@ main{
     color: var(--PrimarioVino);
     text-align: left;
   }
+}
+
+.info-estatus > li{
+  margin-top: 10px;
+  color: #410c3a;
+}
+.info-estatus > li > span{
+  font-weight: 500;
+}
+#btnContratarPlan{
+  background-color: #d93611;
+  color: white;
+  padding: 10px;
+  font-weight: 500;
+  margin-top: auto;
+  margin-bottom: auto;
 }
