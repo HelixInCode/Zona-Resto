@@ -10,7 +10,8 @@ module.exports = {
     pedido_apunto: path.resolve(__dirname, 'entryPoints JS/pedido_apunto.js'),
     ayuda: path.resolve(__dirname, 'entryPoints JS/ayuda.js'),
     ayuda_socios: path.resolve(__dirname, 'entryPoints JS/ayuda_socios.js'),
-    panel_socios: path.resolve(__dirname, 'entryPoints JS/panel_socios.js')
+    panel_socios: path.resolve(__dirname, 'entryPoints JS/panel_socios.js'),
+    planes_promocion: path.resolve(__dirname, 'entryPoints JS/planes-promocion.js')
   },
   output: {
     path: path.resolve(__dirname, '../../dist/js/webpack'),
