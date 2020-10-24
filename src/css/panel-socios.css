@@ -320,13 +320,15 @@ main{
 }
 #panel-socios > [data-type="Finanzas"] > .resto-container > .info > .time-left{
   text-align: center;
+
+  & span{
+    font-weight: 500;
+    font-size: var(--font-size);
+    color: var(--PrimarioVino);
+    text-align: left;
+  }
 }
-#panel-socios > [data-type="Finanzas"] > .resto-container > .info > .time-left span{
-  font-weight: 500;
-  font-size: var(--font-size);
-  color: var(--PrimarioVino);
-  text-align: left;
-}
+
 .info-estatus > li{
   margin-top: 10px;
   color: #410c3a;
