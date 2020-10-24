@@ -10,7 +10,8 @@ module.exports = {
     pedido_apunto: path.resolve(__dirname, 'entryPoints JS/pedido_apunto.js'),
     ayuda: path.resolve(__dirname, 'entryPoints JS/ayuda.js'),
     ayuda_socios: path.resolve(__dirname, 'entryPoints JS/ayuda_socios.js'),
-    panel_socios: path.resolve(__dirname, 'entryPoints JS/panel_socios.js')
+    panel_socios: path.resolve(__dirname, 'entryPoints JS/panel_socios.js'),
+    registro_socios: path.resolve(__dirname, 'entryPoints JS/registro_socios.js')
   },
   output: {
     path: path.resolve(__dirname, '../../dist/js/webpack'),
@@ -29,11 +30,11 @@ module.exports = {
       },
       
       {
-        test: /\.(jpg|png)$/,
+        test: /\.(jpg|png|jpeg|svg)$/,
         use: {
           loader: 'url-loader',
           options: {
-           limit: 100000
+           limit: 1000000
           }
         }
       },
@@ -58,7 +59,8 @@ module.exports = {
     splitChunks: {
       // include all types of chunks
       chunks: 'all',
-      name: 'common'
+      minSize: 0,
+      name: 'common',
     }
   },
   plugins: [

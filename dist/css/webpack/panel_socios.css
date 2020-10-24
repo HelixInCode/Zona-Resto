@@ -131,13 +131,14 @@ main{
 }
 #panel-socios > [data-type="Datos"] > .user-features > li{
   font-weight: 500;
-  color: var(--PrimarioVinoClaro) 
+  color: var(--PrimarioVinoClaro);
 }
 #panel-socios > [data-type="Datos"] > .user-features > li > span{
   color: var(--PrimarioVino);
 }
 #panel-socios > [data-type="Datos"] > .user-picture > button{
   max-height: 34px;
+  border: none;
   padding: 5px 10px;
   color: #fff;
   text-align: center;
@@ -162,6 +163,7 @@ main{
 #panel-socios > [data-type="Resto"] button,
 #panel-socios > [data-type="Finanzas"] button{
   max-height: 34px;
+  border: none;
   padding: 5px 10px;
   color: #fff;
   text-align: center;
@@ -201,24 +203,29 @@ main{
 #panel-socios > [data-type="Finanzas"] > .resto-container > .info > .resto-descripcion{
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto auto 1fr
+  grid-template-rows: auto auto 1fr;
 }
-#panel-socios > [data-type="Resto"] > .resto-container > .info > .resto-descripcion > h5,#panel-socios > [data-type="Finanzas"] > .resto-container > .info > .resto-descripcion > h5{
+#panel-socios > [data-type="Resto"] > .resto-container > .info > .resto-descripcion div,
+#panel-socios > [data-type="Finanzas"] > .resto-container > .info > .resto-descripcion div{
+  align-self: flex-end;
+
+  display: grid;
+  grid-template-columns: 1fr;
+}
+#panel-socios > [data-type="Resto"] > .resto-container > .info > .resto-descripcion > h5,
+#panel-socios > [data-type="Finanzas"] > .resto-container > .info > .resto-descripcion > h5{
   text-align: left;
   font-size: var(--font-size);
 }
-#panel-socios > [data-type="Resto"] > .resto-container > .info > .resto-descripcion span,#panel-socios > [data-type="Finanzas"] > .resto-container > .info > .resto-descripcion span{
+#panel-socios > [data-type="Resto"] > .resto-container > .info > .resto-descripcion span,
+#panel-socios > [data-type="Finanzas"] > .resto-container > .info > .resto-descripcion span{
   align-self: flex-end;
 }
-#panel-socios > [data-type="Resto"] > .resto-container > .info > .resto-descripcion span > span,#panel-socios > [data-type="Finanzas"] > .resto-container > .info > .resto-descripcion span > span{
+#panel-socios > [data-type="Resto"] > .resto-container > .info > .resto-descripcion span > span,
+#panel-socios > [data-type="Finanzas"] > .resto-container > .info > .resto-descripcion span > span{
   font-weight: 500;
   color: var(--PrimarioVino);
   font-size: var(--font-size);
-}
-#panel-socios > [data-type="Resto"] > .resto-container > .info > .resto-descripcion div,#panel-socios > [data-type="Finanzas"] > .resto-container > .info > .resto-descripcion div{
-  align-self: flex-end;
-  display: grid;
-  grid-template-columns: 1fr;
 }
 #panel-socios > [data-type="Resto"] > .resto-container > .info > .buttons-container{
   display: grid;
@@ -229,7 +236,7 @@ main{
 }
 #panel-socios > [data-type="Finanzas"] > .resto-container > .info > .time-left{
   align-self: flex-end;
-  text-align: center
+  text-align: center;
 }
 #panel-socios > [data-type="Finanzas"] > .resto-container > .info > .time-left span{
   font-weight: 500;

@@ -1,0 +1,121 @@
+:root{
+  --margin-top: 0px;
+  
+  --imgCover:{
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  --input-text:{
+    width: 100%;
+    padding: 5px;
+    height: 35px;
+    border: none;
+    /* border-radius: 5px; */
+  }
+
+  --button:{
+    max-height: 34px;
+    border: none;
+    padding: 5px 10px;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    background-color: var(--PrimarioNaranja);
+    transition: .3s;
+
+    &:hover{
+      background-color: color(#d93611 b(0%));
+    }
+  }
+  @media screen and (min-width: 768px) {
+    --margin-top: 80px;
+  }
+}
+@media screen and (min-height: 555px) {
+  /* Wider than 555px */ 
+}
+@media screen and (min-width: 576px) {
+  /* Wider than 576px */ 
+}
+@media screen and (min-width: 768px) {
+  /* Wider than 768px */ 
+}
+@media screen and (min-width: 992px) {
+  /* Wider than 992px */ 
+}
+@media screen and (min-width: 1010px) {
+  /* Wider than 1010px */ 
+}
+@media screen and (min-width: 1060px) {
+  /* Wider than 1060px */ 
+}
+@media screen and (min-width: 1200px) {
+  /* Wider than 1200px */ 
+}
+main{
+  background-image: url('../../dist/img/back-registro-socios.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#registro{
+  margin-top: var(--margin-top);
+  display: grid;
+  grid-template-columns: minmax(200px, 750px);
+  justify-content: flex-start;
+  justify-items: center;
+}
+#registro > h1{
+  font-size: 2em;
+  text-align: center;
+  color: var(--SecundarioAmarillo);
+}
+#registro > .registro-container{
+  display: grid;
+  grid-template-columns: minmax(200px, 500px);
+  gap: 20px;
+  background-color: rgba(225, 225, 225, 0.75);
+  border-radius: 15px;
+  
+  @media screen and (min-width: 576px){
+
+    grid-template-columns: repeat(2, minmax(200px, calc(750px/2)));
+  }
+  @media screen and (min-width: 768px){
+    justify-self: flex-start;
+  }
+}
+#registro > .registro-container > .input-container{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto;
+}
+#registro > .registro-container > .input-container > label{
+  color: var(--PrimarioVino);
+  font-weight: 500;
+  font-size: 19.2px;
+}
+#registro > .registro-container > .input-container:nth-last-of-type(2){
+  grid-template-columns: auto 1fr;
+  grid-template-rows: unset;
+  align-items: center;
+  gap: 10px;
+}
+#registro > .registro-container > .input-container:nth-last-of-type(2) > label{
+  margin: 0;
+}
+#registro > .registro-container > .input-container:nth-last-of-type(n+3) > input{
+  @apply --input-text;
+}
+#registro > .registro-container > .input-container:last-of-type{
+  justify-self: center;
+  align-self: center;
+}
+#registro > .registro-container > .input-container:last-of-type > button{
+  @apply --button;
+}

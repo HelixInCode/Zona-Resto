@@ -1,0 +1,182 @@
+:root{
+  --PrimarioNaranja: #d93611;
+  --PrimarioVino: #410c3a;
+  --PrimarioVinoClaro: #9c6299;
+  --SecundarioAmarillo: #ffe577;
+  --SecundarioNaranja: #f28241;
+  --SecundarioNaranjaClaro: #fec051;
+  --RobotoParrafos: 'Roboto', sans-serif;/*regular*/
+  /* --SecundarioOscuro: #0075BE; */
+  --sombra: rgba(0, 0, 0, 0.5);
+  --sombraClara: rgba(170, 170, 170, 0.25);
+  --background: #f6f6f6;
+  --overlay:{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--sombra);
+    transition: .3s;
+  }
+}
+
+@media screen and (min-width: 412px){
+  /* Wider than 412px */ 
+}
+@media screen and (min-width: 576px){
+  /* Wider than 576px */ 
+}
+@media screen and (min-width: 768px){
+  /* Wider than 768px */ 
+}
+
+.nav-principal{
+  z-index: 9999; 
+  top: 0;
+  right: 0;
+  left: 0;
+  margin: 0;
+  padding: 10px 0;
+  background-color: var(--PrimarioVino);
+  width: 100%;
+  height: auto;
+  display: grid;
+  /* grid-template-columns: 120px auto; */
+  grid-template-columns: auto 1fr;
+  gap: 15px;
+  align-items: center;
+  
+  @media screen and (min-width: 768px){
+    position: fixed;
+    grid-template-columns: 120px 1fr auto;
+  }
+}
+.nav-principal > .navbar-logo{
+  justify-self: center;
+}
+.nav-principal > .navbar-logo > img{
+  height: 60px;
+}
+.nav-principal > #hamburger{
+  z-index: 9999;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  background-color: var(--PrimarioVino);
+  justify-content: center;
+  align-items: center;
+  transition: .3s;
+  outline: none;
+}
+.nav-principal > form{    
+  z-index: 9999;
+  padding: 5px;
+  position: fixed;
+  width: calc(100% - 20px);
+  right: 10px;
+  bottom: 100px;
+  border-radius: 10px;
+  background-color: var(--PrimarioVino);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  transition: .3s;
+
+  @media screen and (min-width: 412px){
+    width: 391px;
+  }
+  @media screen and (min-width: 768px){
+    width: unset;
+    position: unset;
+    border-radius: unset;
+    background-color: unset;
+    justify-self: center;
+    align-self: center;
+    grid-template-columns: repeat(2, minmax(100px, 350px)) 50px;
+  }
+}
+.nav-principal > form.hide{
+  right: -120%;
+}
+.nav-principal > form > .input-container{
+  position: relative;
+}
+.nav-principal > form > .input-container > input{
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 40px;
+  
+  @media screen and (min-width: 768px){
+    border: 1px solid var(--PrimarioVino);
+  }
+}
+.nav-principal > form > .input-container:nth-of-type(1) > input{
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  
+  @media screen and (min-width: 768px){
+    border-top-right-radius: unset;
+    border-bottom-left-radius: 5px;
+  }
+}
+.nav-principal > form > .input-container > i{
+  position: absolute;
+  top: 12px;
+  left: 10px;
+  font-size: 20px;
+  color: var(--PrimarioVino);
+}
+.nav-principal > form >  button{
+  padding: 10px;
+  background-color: var(--PrimarioNaranja);
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  outline: none;
+  
+  @media screen and (min-width: 768px){
+    padding: unset;
+    border: 1px solid var(--PrimarioVino);
+    border-bottom-left-radius: unset;
+    border-top-right-radius: 5px;
+  }
+}
+.nav-principal > form >  button:hover{
+  @media screen and (min-width: 768px){
+    background-color: var(--SecundarioNaranja);
+    transition-duration: 0.5s;
+  }
+}
+.nav-principal > form >  button > i{
+  color: #fff;
+  margin: auto;
+  font-size: 18px;
+}
+.nav-principal > form >  button:hover > i{
+  @media screen and (min-width: 768px){
+    font-size: 25px;
+    transition-duration: 0.3s;
+  }
+}
+.nav-principal > .menu-overlay{
+  @apply --overlay;
+}
+.nav-principal > .menu-overlay.hide{
+  transform: translateX(-100%);
+}
+.nav-principal > .enlaces-nav{
+  display: grid;
+  grid-template-columns: 1fr;
+  text-align: end;
+  align-items: center;
+}
+.nav-principal > .enlaces-nav > a{
+  color: var(--SecundarioNaranjaClaro);
+  font-weight: 600;
+}

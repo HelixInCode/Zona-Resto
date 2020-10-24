@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Zona Resto</title>
+  <!-- WEB icon -->
+  <!-- <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon"> -->
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="dist/css/bootstrap.min.css">
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href="dist/css/mdb.min.css">
+  <!-- Your custom styles (optional) -->
+  <link rel="stylesheet" href="dist/css/webpack/common.css">
+  <link rel="stylesheet" href="dist/css/webpack/registro_socios.css">
+</head>
+<body>
+
+  <!-- Start your project here-->  
+<header>
+
+  <nav class="nav-principal px-3">
+
+    <a class="navbar-logo waves-effect waves-light" href="index.html">
+        <img src="./dist/img/zonaResto Blanco.png" alt="Zona logo">
+    </a>
+    <!-- <i style="color: #fff;" class="fas fa-search"></i> -->
+    <div id="hamburger" class="hamburger-btn waves-effect waves-light d-flex d-md-none">
+        <i id="ham-icon" class="fas fa-search"></i>
+        <i id="times" class="fas fa-times d-none"></i>
+    </div>
+
+    <form class="menu-items hide" action="">
+        <div class="input-container">
+            <i class="fas fa-store-alt fa-2x"></i>
+            <input type="text" placeholder="Nombre">
+        </div>
+        <div class="input-container">
+            <i class="fas fa-utensils fa-2x"></i>
+            <input type="text" placeholder="Tipo de Resto">
+        </div>
+        <button type="submit" class="waves-effect waves-light">
+            <i class="fas fa-search"></i>
+        </button>
+
+    </form>
+
+    <div class="menu-overlay hide d-block d-md-none"></div>
+
+    <div class="enlaces-nav">
+        <a href="">Ayuda</a>
+        <a href="">
+            <i class="fas fa-map-marker-alt"></i>
+            Ciudad, Provincia
+        </a>
+    </div>
+
+  </nav>
+
+</header>
+
+<main id="main-results">  
+ 
+  <section id="registro" class="px-2 px-sm-3 px-md-5 pt-5">
+
+    <h1>Registro</h1>
+
+    <div class="registro-container px-3 px-md-5 py-3 mb-5">
+
+      <div class="input-container">
+        <label for="Nombre">Nombre</label>
+        <input name="Nombre" type="text">
+      </div>
+
+      <div class="input-container">
+        <label for="Apellido">Apellido</label>
+        <input name="Apellido" type="text">
+      </div>
+
+      <div class="input-container">
+        <label for="Correo">Correo</label>
+        <input name="Correo" type="text">
+      </div>
+
+      <div class="input-container">
+        <label for="Contrasena">Contraseña</label>
+        <input name="Contrasena" type="text">
+      </div>
+
+      <div class="input-container">
+        <label for="Pais">País donde te ubicas</label>
+        <input name="Pais" type="text">
+      </div>
+
+      <div class="input-container">
+        <label for="address">Estado / Departamento / Provincia</label>
+        <input name="address" type="text">
+      </div>
+
+      <div class="input-container">
+        <label for="ciudad">Ciudad / Municipio</label>
+        <input name="ciudad" type="text">
+      </div>
+
+      <div class="input-container">
+        <label for="birthDate">Fecha de Nacimiento</label>
+        <input name="birthDate" type="text">
+      </div>
+
+      <div class="input-container">
+        <input id="condiciones" type="checkbox">
+        <label for="condiciones">Acepto Términos y Condiciones</label>
+      </div>
+
+      <div class="input-container">
+        <button type="submit">Registrarme</button>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="main-footer">
+    <!-- insertar footer por JavaScript -->
+</footer>
+
+<!-- jQuery -->
+<script type="text/javascript" src="dist/js/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="dist/js/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="dist/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="dist/js/mdb.min.js"></script>
+<!-- Your custom scripts (optional) -->
+<script type="text/javascript" src="dist/js/webpack/common.js"></script>
+<script type="text/javascript" src="dist/js/webpack/registro_socios.js"></script>
+  
+</body>
+</html>
+  

@@ -57,7 +57,7 @@
 /******/ 	// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 	// Promise = chunk loading, 0 = chunk loaded
 /******/ 	var installedChunks = {
-/******/ 		"panel_socios": 0
+/******/ 		"registro_socios": 0
 /******/ 	};
 /******/
 /******/ 	var deferredModules = [];
@@ -148,34 +148,34 @@
 /******/
 /******/
 /******/ 	// add entry module to deferred list
-/******/ 	deferredModules.push(["./src/js/entryPoints JS/panel_socios.js","common"]);
+/******/ 	deferredModules.push(["./src/js/entryPoints JS/registro_socios.js","common"]);
 /******/ 	// run deferred modules when ready
 /******/ 	return checkDeferredModules();
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/css/panel-socios.css":
-/*!**********************************!*\
-  !*** ./src/css/panel-socios.css ***!
-  \**********************************/
+/***/ "./src/css/registro-socios.css":
+/*!*************************************!*\
+  !*** ./src/css/registro-socios.css ***!
+  \*************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack:///./src/css/panel-socios.css?");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack:///./src/css/registro-socios.css?");
 
 /***/ }),
 
-/***/ "./src/js/entryPoints JS/panel_socios.js":
-/*!***********************************************!*\
-  !*** ./src/js/entryPoints JS/panel_socios.js ***!
-  \***********************************************/
+/***/ "./src/js/entryPoints JS/registro_socios.js":
+/*!**************************************************!*\
+  !*** ./src/js/entryPoints JS/registro_socios.js ***!
+  \**************************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_chunks_nav_principal_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../css/chunks/nav-principal.css */ \"./src/css/chunks/nav-principal.css\");\n/* harmony import */ var _css_panel_socios_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../css/panel-socios.css */ \"./src/css/panel-socios.css\");\n/* harmony import */ var _css_chunks_footer_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../css/chunks/footer.css */ \"./src/css/chunks/footer.css\");\n/* harmony import */ var _renderFooter_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../renderFooter.js */ \"./src/js/renderFooter.js\");\n/* harmony import */ var _renderFooter_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_renderFooter_js__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _hideShowModals_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../hideShowModals.js */ \"./src/js/hideShowModals.js\");\n/* harmony import */ var _hideShowModals_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_hideShowModals_js__WEBPACK_IMPORTED_MODULE_4__);\n// CSS code imported \n\n\n // JS code imported \n\n\n\nvar $navAyuda = document.getElementsByClassName('inner-nav')[0];\nvar $items = document.getElementsByClassName('panel-socios-container');\n$items = Array.from($items);\n$navAyuda.addEventListener('click', function (event) {\n  if (event.target.classList.contains('item')) {\n    var arregloNav = Array.from($navAyuda.children);\n    arregloNav.forEach(function (button) {\n      button.classList.remove('active');\n    });\n    event.target.classList.add('active');\n\n    var toggleSections = function toggleSections($items, nombre) {\n      $items.forEach(function (item) {\n        item.classList.add('d-none');\n\n        if (item.dataset.type === nombre) {\n          item.classList.remove('d-none');\n        }\n      });\n    };\n\n    switch (event.target.dataset.type) {\n      case \"Datos\":\n        toggleSections($items, \"Datos\");\n        break;\n\n      case \"Resto\":\n        toggleSections($items, \"Resto\");\n        break;\n\n      case \"Finanzas\":\n        toggleSections($items, \"Finanzas\");\n        break;\n\n      default:\n        break;\n    }\n  }\n});\n\n//# sourceURL=webpack:///./src/js/entryPoints_JS/panel_socios.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_chunks_nav_principal_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../css/chunks/nav-principal.css */ \"./src/css/chunks/nav-principal.css\");\n/* harmony import */ var _css_chunks_footer_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../css/chunks/footer.css */ \"./src/css/chunks/footer.css\");\n/* harmony import */ var _css_registro_socios_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../css/registro-socios.css */ \"./src/css/registro-socios.css\");\n/* harmony import */ var _renderFooter_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../renderFooter.js */ \"./src/js/renderFooter.js\");\n/* harmony import */ var _renderFooter_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_renderFooter_js__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _hideShowModals_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../hideShowModals.js */ \"./src/js/hideShowModals.js\");\n/* harmony import */ var _hideShowModals_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_hideShowModals_js__WEBPACK_IMPORTED_MODULE_4__);\n/* harmony import */ var _hamburger_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../hamburger.js */ \"./src/js/hamburger.js\");\n/* harmony import */ var _hamburger_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_hamburger_js__WEBPACK_IMPORTED_MODULE_5__);\n\n\n // JS code imported \n\n\n\n\n\n//# sourceURL=webpack:///./src/js/entryPoints_JS/registro_socios.js?");
 
 /***/ })
 

@@ -1,0 +1,167 @@
+:root{
+  --PrimarioNaranja: #d93611;
+  --PrimarioVino: #410c3a;
+  --PrimarioVinoClaro: #9c6299;
+  --SecundarioAmarillo: #ffe577;
+  --SecundarioNaranja: #f28241;
+  --SecundarioNaranjaClaro: #fec051;
+  --RobotoParrafos: 'Roboto', sans-serif;/*regular*/
+  /* --SecundarioOscuro: #0075BE; */
+  --sombra: rgba(0, 0, 0, 0.5);
+  --sombraClara: rgba(170, 170, 170, 0.25);
+  --background: #f6f6f6;
+}
+@media screen and (min-width: 576px) {
+  /* Wider than 576px */ 
+}
+@media screen and (min-width: 768px) {
+  /* Wider than 768px */ 
+}
+@media screen and (min-width: 1060px) {
+  /* Wider than 1060px */ 
+}
+
+@custom-selector :--inner-footer .main-footer > .footer-container;
+@custom-selector :--footer-list-anchor ul > li > a;
+.main-footer{
+  z-index: 999;
+  position: relative;
+  background-color: var(--PrimarioNaranja);
+  @media screen and (min-width: 1060px){
+    /* border-top: 5px solid var(--SecundarioAmarillo); */
+  }
+}
+.main-footer ul{
+  list-style: none;
+}
+:--inner-footer{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(5, auto) 174px;
+  row-gap: 25px;
+  color: #fff;
+  
+  @media screen and (min-width: 576px){
+    grid-template-columns: minmax(250px, 1fr) minmax(180px, 1fr);
+    grid-template-rows: auto auto 174px;
+    column-gap: 15px;
+    row-gap: unset;
+  }
+  @media screen and (min-width: 768px){
+    grid-template-columns: minmax(250px, 1fr) minmax(180px, 1fr) minmax(270px, 1fr);
+    grid-template-rows: auto 174px;
+  }
+  @media screen and (min-width: 1060px){
+    grid-template-columns:  minmax(270px, 1fr) minmax(250px, 1fr) minmax(180px, 1fr) minmax(270px, 1fr);
+    grid-template-rows: 174px;
+  }
+}
+:--inner-footer hr{
+  border-bottom: 2px solid #fff;
+  width: 100px;
+  justify-self: center;
+}
+:--inner-footer > .footer-links > ul{
+  /* display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: 10px; */
+  text-align: center;
+  font-weight: 500;
+  
+  @media screen and (min-width: 768px){
+    text-align: unset;
+    justify-items: unset;
+  }
+}
+:--inner-footer > .footer-links > ul > li{
+  padding-bottom: 10px;
+}
+:--inner-footer > .footer-social-links{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  @media screen and (min-width: 1060px){
+  }
+}
+:--inner-footer > .footer-social-links > ul{
+  display: flex;
+  justify-content: center;
+  width: 151px;
+}
+:--inner-footer > .footer-social-links i{
+  font-size: 27px;
+}
+:--inner-footer > .footer-social-links > ul > li{
+  padding: 0 15px;
+}
+:--inner-footer > .footer-social-links > h6,
+:--inner-footer > .footer-phrase > h5{
+  font-weight: 500;
+}
+:--inner-footer > .footer-phrase{
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+
+  @media screen and (min-width: 576px){
+    grid-column: 2 span;
+  } 
+  @media screen and (min-width: 768px){
+    grid-column: unset;
+  }
+}
+:--inner-footer > .footer-img{
+  background-color: var(--PrimarioVino);
+  display: grid;
+  grid-template-columns: 1fr;
+  
+  @media screen and (min-width: 576px){
+    grid-column: 2 span;
+  }
+  @media screen and (min-width: 768px){
+    grid-column: 3 span;
+  }
+  @media screen and (min-width: 1060px){
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    grid-template-columns: 1fr auto;
+    grid-column: unset;
+  }
+}
+:--inner-footer > .footer-img > img:nth-of-type(1){
+  height: 100%;
+  justify-self: center;
+  
+  @media screen and (min-width: 1060px){
+    /* height: unset; */
+    /* width: 100%; */
+  }
+}
+:--inner-footer > .footer-img > img:nth-of-type(2){
+  display: none;
+  height: 100%;
+
+  @media screen and (min-width: 1060px){
+    display: block;
+  }
+}
+:--inner-footer > .footer-links > :--footer-list-anchor,
+:--inner-footer > .footer-social-links > :--footer-list-anchor{
+  color: #fff;
+}
+.main-footer > .footer-bottom{
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  font-size: 15px;
+  text-align: center;
+  color: var(--PrimarioVino);
+  background-color: var(--SecundarioAmarillo);
+  font-weight: bold;
+}
+.main-footer > .footer-bottom > a{
+  color: var(--PrimarioVino);
+}

@@ -155,6 +155,18 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/css/style.css":
+/*!***************************!*\
+  !*** ./src/css/style.css ***!
+  \***************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack:///./src/css/style.css?");
+
+/***/ }),
+
 /***/ "./src/js/entryPoints JS/index.js":
 /*!****************************************!*\
   !*** ./src/js/entryPoints JS/index.js ***!
@@ -163,7 +175,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../css/style.css */ \"./src/css/style.css\");\n/* harmony import */ var _renderFooter_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../renderFooter.js */ \"./src/js/renderFooter.js\");\n/* harmony import */ var _renderFooter_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_renderFooter_js__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _hideShowModals_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../hideShowModals.js */ \"./src/js/hideShowModals.js\");\n/* harmony import */ var _hideShowModals_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_hideShowModals_js__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _hamburger_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../hamburger.js */ \"./src/js/hamburger.js\");\n/* harmony import */ var _hamburger_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_hamburger_js__WEBPACK_IMPORTED_MODULE_3__);\n// CSS code imported \n // JS code imported \n\n\n\n\n\n//# sourceURL=webpack:///./src/js/entryPoints_JS/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../css/style.css */ \"./src/css/style.css\");\n/* harmony import */ var _css_chunks_footer_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../css/chunks/footer.css */ \"./src/css/chunks/footer.css\");\n/* harmony import */ var _renderFooter_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../renderFooter.js */ \"./src/js/renderFooter.js\");\n/* harmony import */ var _renderFooter_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_renderFooter_js__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _hideShowModals_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../hideShowModals.js */ \"./src/js/hideShowModals.js\");\n/* harmony import */ var _hideShowModals_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_hideShowModals_js__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _hamburger_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../hamburger.js */ \"./src/js/hamburger.js\");\n/* harmony import */ var _hamburger_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_hamburger_js__WEBPACK_IMPORTED_MODULE_4__);\n// CSS code imported \n\n // JS code imported \n\n\n\n\n\n//# sourceURL=webpack:///./src/js/entryPoints_JS/index.js?");
 
 /***/ })
 

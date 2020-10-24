@@ -9,7 +9,7 @@
     "build": "webpack --config ./src/js/webpack.config.js --mode=development",
     "build-p": "webpack --config ./src/js/webpack.config.js --mode=production",
     "build-watch": "webpack --config ./src/js/webpack.config.js --watch --mode=development",
-    "build-watch-p": "webpack --config ./src/js/webpack.config.js --watch --mode=production" 
+    "build-watch-p": "webpack --config ./src/js/webpack.config.js --watch --mode=production"
   },
   "repository": {
     "type": "git",
