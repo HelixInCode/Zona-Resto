@@ -143,6 +143,7 @@
 :--inner-footer > .footer-img > img:nth-of-type(2){
   display: none;
   height: 100%;
+  transform: translateX(1px);
 
   @media screen and (min-width: 1060px){
     display: block;

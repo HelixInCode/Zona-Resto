@@ -1,6 +1,4 @@
 const path = require('path')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const webpack = require('webpack')
 
 module.exports = {
   entry: {
@@ -14,59 +12,27 @@ module.exports = {
     registro_socios: path.resolve(__dirname, 'entryPoints JS/registro_socios.js'),
     planes_promocion: path.resolve(__dirname, 'entryPoints JS/planes-promocion.js')
   },
-  output: {
-    path: path.resolve(__dirname, '../../dist/js/webpack'),
-    filename: '[name].js'
-  },
   module:{
     rules:[
       {
         test: /\.js$/,
+        exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env']
           }
-        }
+        },
       },
-      
       {
-        test: /\.(jpg|png|jpeg|svg)$/,
+        test: /\.(jpg|jpeg|png|gif|woff|eot|ttf|svg|mp4|webm)$/,
         use: {
           loader: 'url-loader',
           options: {
-           limit: 1000000
+            limit: 100000
           }
         }
-      },
-      
-      {
-        test: /\.css$/,
-        use:[
-          MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader',
-            options:{
-              importLoaders: 1,
-            }
-          },
-          'postcss-loader'
-        ]
       }
     ]
-      
   },
-  optimization: {
-    splitChunks: {
-      // include all types of chunks
-      chunks: 'all',
-      minSize: 0,
-      name: 'common',
-    }
-  },
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: '../../css/webpack/[name].css'
-    }),
-  ]
 }

@@ -126,6 +126,31 @@ main{
 #help > .help-container ul li{
   font-size: 19.2px;
 }
+#help > [data-type="FAQ"] ul li > .title-question{
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  cursor: pointer;
+}
+#help > [data-type="FAQ"] ul li > .title-question > i{
+  color: var(--primary);
+}
+
+#help > [data-type="FAQ"] ul li > .title-question:hover,
+#help > [data-type="FAQ"] ul li > .title-question.selected{
+  background-color: var(--PrimarioVino);
+}
+#help > [data-type="FAQ"] ul li > .title-question:hover > h5,
+#help > [data-type="FAQ"] ul li > .title-question.selected > h5{
+  color: #fff;
+}
+#help > [data-type="FAQ"] ul li > .title-question:hover > i,
+#help > [data-type="FAQ"] ul li > .title-question.selected > i{
+  color: var(--SecundarioNaranjaClaro);
+}
+#help > [data-type="FAQ"] ul li > .info-toggle{
+  border: 3px solid var(--PrimarioVino);
+}
 #help > .help-container p{
   margin-bottom: 20px;
 }

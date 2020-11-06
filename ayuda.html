@@ -16,7 +16,7 @@
   <!-- Material Design Bootstrap -->
   <link rel="stylesheet" href="dist/css/mdb.min.css">
   <!-- Your custom styles (optional) -->
-  <link rel="stylesheet" href="dist/css/webpack/common.css">
+  
   <link rel="stylesheet" href="dist/css/webpack/ayuda.css">
 </head>
 <body>
@@ -100,73 +100,122 @@
           
           <h3 class="font-weight-bold mb-4 text-center">Preguntas Frecuentes</h3>
 
-          <ul>
-            <li class="mt-5">
-              <h5 class="font-weight-bold">¿Cómo funciona Zona Resto?</h5>
-              <p>Ingresa el país, la ciudad donde estas y el nombre del Restaurante o emprendimiento gastronómico. También puedes ingresar el tipo de comida o producto en el buscador, el sistema te mostrará diversos resultados relacionados con tu búsqueda y podrás elegir cualquiera de estos.</p>
-              <p>Tendrás la opción de comunicarte directamente con el local o emprendedor; también podrás
-              realizar pedidos por alguna app de delivery, si dicho Resto está registrado en alguna; y de
-              otra manera, podrás realizar un pedido directo a través de nuestra plataforma, donde podrás
-              visualizar el menú del Resto con sus precios.</p>
+          <ul id="FAQ-list">
+            <li class="">
+              <div class="title-question">
+                <h5 class="font-weight-bold">¿Cómo funciona Zona Resto?</h5>
+                <i class="fas fa-chevron-circle-down"></i>
+              </div>
+              <div class="info-toggle d-none">
+                <p>Ingresa el país, la ciudad donde estas y el nombre del Restaurante o emprendimiento gastronómico. También puedes ingresar el tipo de comida o producto en el buscador, el sistema te mostrará diversos resultados relacionados con tu búsqueda y podrás elegir cualquiera de estos.</p>
+                <p>Tendrás la opción de comunicarte directamente con el local o emprendedor; también podrás
+                realizar pedidos por alguna app de delivery, si dicho Resto está registrado en alguna; y de
+                otra manera, podrás realizar un pedido directo a través de nuestra plataforma, donde podrás
+                visualizar el menú del Resto con sus precios.</p>
+              </div>
             </li>
   
-            <li class="mt-5">
-              <h5 class="font-weight-bold">¿Pedir por Zona Resto tiene algún costo?</h5>
-              <p>¡No! ¡Zona resto es un servicio completamente gratis para los usuarios!</p>
+            <li class="">
+              <div class="title-question">
+                <h5 class="font-weight-bold">¿Pedir por Zona Resto tiene algún costo?</h5>
+                <i class="fas fa-chevron-circle-down"></i>
+              </div>
+              <div class="info-toggle d-none">
+                <p>¡No! ¡Zona resto es un servicio completamente gratis para los usuarios!</p>
+              </div>
             </li>
   
-            <li class="mt-5">
-  
-              <h5 class="font-weight-bold">¿Debo registrarme para hacer un pedido?</h5>
-              <p>No necesitas estar registrado para pedir, solo debes seleccionar un Resto y en caso de
-                realizar un pedido a través de nuestra plataforma, solo deberás ingresar algunos datos
-                básicos que le llegarán al Resto seleccionado.</p>
+            <li class="">
+              <div class="title-question">
+                <h5 class="font-weight-bold">¿Debo registrarme para hacer un pedido?</h5>
+                <i class="fas fa-chevron-circle-down"></i>
+              </div>
+              <div class="info-toggle d-none">
+                <p>No necesitas estar registrado para pedir, solo debes seleccionar un Resto y en caso de
+                  realizar un pedido a través de nuestra plataforma, solo deberás ingresar algunos datos
+                  básicos que le llegarán al Resto seleccionado.</p>
+              </div>
               
             </li>
   
-            <li class="mt-5">
-              <h5 class="font-weight-bold">¿Que tipo de Restos hay disponibles?</h5>
-              <p>Solo para venta gastronómica. Podrás conseguir desde alta cocina, comida casera, comida
-                extranjera, ventas de dulces, bebidas y productos para cocinar.</p>
+            <li class="">
+              <div class="title-question">
+                <h5 class="font-weight-bold">¿Que tipo de Restos hay disponibles?</h5>
+                <i class="fas fa-chevron-circle-down"></i>
+              </div>
+              <div class="info-toggle d-none">
+                <p>Solo para venta gastronómica. Podrás conseguir desde alta cocina, comida casera, comida
+                  extranjera, ventas de dulces, bebidas y productos para cocinar.</p>
+              </div>
             </li>
             
-            <li class="mt-5">
-              <h5 class="font-weight-bold">¿Hay alguna prohibición en el comercio de productos?</h5>
-              <p>Está prohibida la comercialización de drogas sintéticas y/u orgánicas, así como también
-                cualquier productos que las contenga.</p>
+            <li class="">
+              <div class="title-question">
+                <h5 class="font-weight-bold">¿Hay alguna prohibición en el comercio de productos?</h5>
+                <i class="fas fa-chevron-circle-down"></i>
+              </div>
+              <div class="info-toggle d-none">
+                <p>Está prohibida la comercialización de drogas sintéticas y/u orgánicas, así como también
+                  cualquier productos que las contenga.</p>
+              </div>
             </li>
             
-            <li class="mt-5">
-              <h5 class="font-weight-bold">¿Zona Resto dispone de servicio de Delivery?</h5>
-              <p>No, por el momento no ofrecemos el servicio de delivery. Este servicio está condicionado
-                según el Resto que elijas, algunos poseen servicio de Delivery y otros no.</p>
+            <li class="">
+              <div class="title-question">
+                <h5 class="font-weight-bold">¿Zona Resto dispone de servicio de Delivery?</h5>
+                <i class="fas fa-chevron-circle-down"></i>
+              </div>
+              <div class="info-toggle d-none">
+                <p>No, por el momento no ofrecemos el servicio de delivery. Este servicio está condicionado
+                  según el Resto que elijas, algunos poseen servicio de Delivery y otros no.</p>
+              </div>
             </li>
             
-            <li class="mt-5">
-              <h5 class="font-weight-bold">¿Cuáles son los métodos de pago?</h5>
-              <p>Esta condición queda a disposición del Resto en el que elijas realizar el pedido. Podrás
-                establecer el método de pago según ellos indiquen.</p>
+            <li class="">
+              <div class="title-question">
+                <h5 class="font-weight-bold">¿Cuáles son los métodos de pago?</h5>
+                <i class="fas fa-chevron-circle-down"></i>
+              </div>
+              <div class="info-toggle d-none">
+                <p>Esta condición queda a disposición del Resto en el que elijas realizar el pedido. Podrás
+                  establecer el método de pago según ellos indiquen.</p>
+              </div>
             </li>
   
-            <li class="mt-5">
-              <h5 class="font-weight-bold">¿Como hacer un Reclamo de un pedido?</h5>
-              <p>Deberás comunicarte con el Resto con el que hubo el problema para indicarle el reclamo.
-                En caso de no obtener respuesta satisfactoria, puedes comunicarte con nosotros a través
-                de nuestro FORMULARIO DE INCONVENIENTES, indicando cuál fue el Resto y el
-                problema que hubo. Trataremos de ayudar para solucionar el reclamo, lo más pronto
-                posible.</p>
+            <li class="">
+              <div class="title-question">
+                <h5 class="font-weight-bold">¿Como hacer un Reclamo de un pedido?</h5>
+                <i class="fas fa-chevron-circle-down"></i>
+              </div>
+              <div class="info-toggle d-none">
+                <p>Deberás comunicarte con el Resto con el que hubo el problema para indicarle el reclamo.
+                  En caso de no obtener respuesta satisfactoria, puedes comunicarte con nosotros a través
+                  de nuestro FORMULARIO DE INCONVENIENTES, indicando cuál fue el Resto y el
+                  problema que hubo. Trataremos de ayudar para solucionar el reclamo, lo más pronto
+                  posible.</p>
+              </div>
             </li>
             
-            <li class="mt-5">
-              <h5 class="font-weight-bold">¿Cómo hago para ser Socio de Zona Resto?</h5>
-              <p>Para ello, solo debes dirigirte a nuestra ZONA DE SOCIOS, allí obtendrás más información.</p>
+            <li class="">
+              <div class="title-question">
+                <h5 class="font-weight-bold">¿Cómo hago para ser Socio de Zona Resto?</h5>
+                <i class="fas fa-chevron-circle-down"></i>
+              </div>
+              <div class="info-toggle d-none">
+                <p>Para ello, solo debes dirigirte a nuestra ZONA DE SOCIOS, allí obtendrás más información.</p>
+              </div>
             </li>
   
-            <li class="mt-5">
-              <h5 class="font-weight-bold">Quiero comentar sobre un resto en la Web, ¿cómo lo hago?</h5>
-              <p>Debes buscar el Resto al que le quieres realizar el comentario, el sistema solo te pedirá tu
-                correo/nombre, la calificación y el mensaje que deseas dejar. Recuerda que los comentarios
-                deben seguir las NORMAS PARA COMENTARIOS</p>
+            <li class="">
+              <div class="title-question">
+                <h5 class="font-weight-bold">Quiero comentar sobre un resto en la Web, ¿cómo lo hago?</h5>
+                <i class="fas fa-chevron-circle-down"></i>
+              </div>
+              <div class="info-toggle d-none">
+                <p>Debes buscar el Resto al que le quieres realizar el comentario, el sistema solo te pedirá tu
+                  correo/nombre, la calificación y el mensaje que deseas dejar. Recuerda que los comentarios
+                  deben seguir las NORMAS PARA COMENTARIOS</p>
+              </div>
             </li>
           </ul>
 
@@ -312,7 +361,7 @@
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="dist/js/mdb.min.js"></script>
     <!-- Your custom scripts (optional) -->
-    <script type="text/javascript" src="dist/js/webpack/common.js"></script>
+    
     <script type="text/javascript" src="dist/js/webpack/ayuda.js"></script>
     
 </body>

@@ -11,7 +11,3 @@ import '../delivery.js';
 import '../traerListaDeCompras.js';
 
 // IMG code imported 
-import marco from '../../../dist/img/marco.png';
-
-const imgResto = document.querySelector('#factura > .factura-container > .logo-container > .img-container');
-imgResto.style.backgroundImage = `url(${marco})`

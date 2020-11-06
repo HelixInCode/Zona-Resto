@@ -10,11 +10,3 @@ import '../hamburger.js';
 import '../UpDownPedido.js';
 
 // IMG code imported 
-import marco from '../../../dist/img/marco.png';
-
-const imgResto = document.querySelector('#publicacion > .publicacion-container > .logo-container > .img-container');
-imgResto.style.backgroundImage = `url(${marco})`
-
-
-
-

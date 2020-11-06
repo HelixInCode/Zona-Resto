@@ -45,7 +45,7 @@ const footerTemplate = ()=>{
 
             <div class="footer-img">
               <img class="py-3" src="dist/img/zonaResto Blanco.png" alt="">
-              <img src="dist/img/footer2-2.png" alt="">
+              <img src="dist/img/footer.svg" alt="">
             </div>
 
           </div>
